@@ -1,0 +1,38 @@
+// A20.h: interface for the CA20 class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#if !defined(AFX_A20_H__9193F3E6_8E77_11D1_B3B5_00A024D448B7__INCLUDED_)
+#define AFX_A20_H__9193F3E6_8E77_11D1_B3B5_00A024D448B7__INCLUDED_
+
+
+#include "IOPort.h"
+
+
+// A20 Control method enumeration.
+enum A20ControlMethod { ACM_NULL, ACM_UNKNOWN, ACM_AT, ACM_PS2 };
+
+class CA20  
+{
+	A20ControlMethod m_eControlMethod;
+	CIOPort m_KbdCommandPort;	// 0x60
+	CIOPort m_KbdStatusPort;	// 0x64
+	
+	bool disable();
+	bool disableUsingAT();
+	bool disableUsingPS2();
+	void enable();
+	bool enableUsingAT();
+	bool enableUsingPS2();
+
+public:
+	CA20();
+	virtual ~CA20();
+
+	// Public member functions.
+	bool create();	
+	bool getEnabled();
+	void setEnabled( bool );
+};
+
+#endif // !defined(AFX_A20_H__9193F3E6_8E77_11D1_B3B5_00A024D448B7__INCLUDED_)

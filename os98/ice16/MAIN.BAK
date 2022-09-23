@@ -1,0 +1,20 @@
+#include "app.h"
+#include "cpu.h"
+
+// Global 32-bit code.
+CApplication Kernel;
+
+// Purpose	: Entry point to 16-bit code for entering 32-bit mode.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 14/01/08
+//
+// Modification History
+// Date		Initials	Reason
+//
+int main()
+{
+	// Return error code from applciation.
+//	return Kernel.Run();
+}

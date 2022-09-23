@@ -1,0 +1,1243 @@
+	.386p
+	ifndef	??version
+?debug	macro
+	endm
+publicdll macro	name
+	public	name
+	endm
+	endif
+	?debug	V 300h
+	?debug	S "DT.CPP"
+	?debug	C E9237832240644542E435050
+	?debug	C E9F37031240444542E48
+	?debug	C E98B7E32240A43505554595045532E48
+	?debug	C E9D3683124064D41494E2E48
+	?debug	C E91D7F3224054150502E48
+	?debug	C E9017E3224054350552E48
+	?debug	C E9B0A82E2406424F4F4C2E48
+	?debug	C E98B7E32240A43505554595045532E48
+	?debug	C E960613124054744542E48
+	?debug	C E9F37031240444542E48
+	?debug	C E980261D1F18433A5C424334355C494E434C5544455C4D414C4C4F+
+	?debug	C 432E48
+	?debug	C E980261D1F17433A5C424334355C494E434C5544455C414C4C4F43+
+	?debug	C 2E48
+	?debug	C E980261D1F17433A5C424334355C494E434C5544455C5F44454653+
+	?debug	C 2E48
+	?debug	C E980261D1F17433A5C424334355C494E434C5544455C5F4E554C4C+
+	?debug	C 2E48
+	?debug	C E9947E32240743505533322E48
+	?debug	C E98B7E32240A43505554595045532E48
+	?debug	C E980261D1F15433A5C424334355C494E434C5544455C444F532E48
+	?debug	C E980261D1F18433A5C424334355C494E434C5544455C4D414C4C4F+
+	?debug	C 432E48
+	?debug	C E980261D1F18433A5C424334355C494E434C5544455C4D454D4F52+
+	?debug	C 592E48
+	?debug	C E980261D1F15433A5C424334355C494E434C5544455C4D454D2E48
+_TEXT	segment byte public use16 'CODE'
+_TEXT	ends
+DGROUP	group	_DATA,_BSS
+	assume	cs:_TEXT,ds:DGROUP
+_DATA	segment word public use16 'DATA'
+d@	label	byte
+d@w	label	word
+_DATA	ends
+_BSS	segment word public use16 'BSS'
+b@	label	byte
+b@w	label	word
+_BSS	ends
+_TEXT	segment byte public use16 'CODE'
+	?debug	C E8010644542E43505023783224
+   ;	
+   ;	CDescriptorTable::CDescriptorTable()
+   ;	
+	?debug	L 18
+	assume	cs:_TEXT
+@CDescriptorTable@$bctr$qv	proc	near
+	?debug	B
+	push	bp
+	mov	bp,sp
+	push	si
+	?debug	C F81A404344657363726970746F725461626C6540+
+	?debug	C 2462637472247176
+	?debug	C E318000200151904
+	?debug	C E6047468697318040600
+	mov	si,word ptr [bp+4]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @1@86
+	call	near ptr N_OVERFLOW@
+@1@86:
+   ;	
+   ;	{
+   ;	
+	?debug	L 19
+	or	si,si
+	jne	short @1@142
+	push	6
+	call	near ptr @$bnew$qui
+	pop	cx
+	mov	si,ax
+	or	ax,ax
+	je	short @1@170
+@1@142:
+   ;	
+   ;		// Set defaults.
+   ;		m_pCPU = NULL;
+   ;	
+	?debug	L 21
+	mov	word ptr [si],0
+   ;	
+   ;		m_pTable = NULL;
+   ;	
+	?debug	L 22
+	mov	word ptr [si+2],0
+   ;	
+   ;		m_iDescriptorCount = 0;
+   ;	
+	?debug	L 23
+	mov	word ptr [si+4],0
+   ;	
+   ;	
+   ;		// Add NULL descriptor.
+   ;		AddSegment( 0, 0, 0, 0 );
+   ;	
+	?debug	L 26
+	push	large 0
+	push	large 0
+	push	0
+	push	0
+	push	si
+	call	near ptr @CDescriptorTable@AddSegment$qucuculul
+	add	sp,14
+@1@170:
+   ;	
+   ;	}
+   ;	
+	?debug	L 27
+	mov	ax,si
+	jmp	short @1@198
+@1@198:
+	pop	si
+	pop	bp
+	ret	
+	?debug	C E6047468697318040600
+	?debug	E
+	?debug	E
+@CDescriptorTable@$bctr$qv	endp
+   ;	
+   ;	CDescriptorTable::~CDescriptorTable()
+   ;	
+	?debug	L 39
+	assume	cs:_TEXT
+@CDescriptorTable@$bdtr$qv	proc	near
+	?debug	B
+	push	bp
+	mov	bp,sp
+	push	si
+	push	di
+	?debug	C F81A404344657363726970746F725461626C6540+
+	?debug	C 2462647472247176
+	?debug	C E60664656C657465040A06000004746869731804+
+	?debug	C 0600
+	mov	si,word ptr [bp+4]
+	mov	di,word ptr [bp+6]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @2@86
+	call	near ptr N_OVERFLOW@
+@2@86:
+   ;	
+   ;	{
+   ;	
+	?debug	L 40
+	or	si,si
+	je	short @2@226
+   ;	
+   ;		// Free table memory if allocated.
+   ;		if( m_pTable!=NULL )
+   ;	
+	?debug	L 42
+	cmp	word ptr [si+2],0
+	je	short @2@170
+   ;	
+   ;		{
+   ;			free( m_pTable );
+   ;	
+	?debug	L 44
+	push	word ptr [si+2]
+	call	near ptr _free
+	pop	cx
+   ;	
+   ;			m_pTable = NULL;
+   ;	
+	?debug	L 45
+	mov	word ptr [si+2],0
+@2@170:
+	test	di,1
+	je	short @2@226
+	push	si
+	call	near ptr @$bdele$qpv
+	pop	cx
+@2@226:
+   ;	
+   ;		}
+   ;	}
+   ;	
+	?debug	L 47
+	pop	di
+	pop	si
+	pop	bp
+	ret	
+	?debug	C E60474686973180406000664656C657465040C07+
+	?debug	C 00
+	?debug	E
+	?debug	E
+@CDescriptorTable@$bdtr$qv	endp
+   ;	
+   ;	SDescriptor* CDescriptorTable::AllocateTable( unsigned short iEntries )
+   ;	
+	?debug	L 59
+	assume	cs:_TEXT
+@CDescriptorTable@AllocateTable$qus	proc	near
+	?debug	B
+	enter	2,0
+	push	si
+	push	di
+	?debug	C F823404344657363726970746F725461626C6540+
+	?debug	C 416C6C6F636174655461626C6524717573
+	?debug	C E60869456E74726965730A0A0600000474686973+
+	?debug	C 18040600
+	mov	si,word ptr [bp+4]
+	mov	di,word ptr [bp+6]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @3@86
+	call	near ptr N_OVERFLOW@
+@3@86:
+   ;	
+   ;	{
+   ;		SDescriptor* pTable;
+   ;	
+   ;		// Assume table allocation will fail.
+   ;		pTable = NULL;
+   ;	
+	?debug	L 64
+	mov	word ptr [bp-2],0
+   ;	
+   ;	
+   ;		// Bound check entry count.
+   ;		if( iEntries>0 && iEntries<=512 )
+   ;	
+	?debug	L 67
+	or	di,di
+	jbe	short @3@170
+	cmp	di,512
+	ja	short @3@170
+   ;	
+   ;		{
+   ;			// Allocate table with space for entries.
+   ;			pTable = (SDescriptor*)malloc( sizeof(SDescriptor)*iEntries );
+   ;	
+	?debug	L 70
+	mov	ax,di
+	shl	ax,3
+	push	ax
+	call	near ptr _malloc
+	pop	cx
+	mov	word ptr [bp-2],ax
+@3@170:
+   ;	
+   ;		}
+   ;	
+   ;		// Return pointer to the new table.
+   ;		return pTable;
+   ;	
+	?debug	L 74
+	mov	ax,word ptr [bp-2]
+	jmp	short @3@198
+@3@198:
+   ;	
+   ;	}
+   ;	
+	?debug	L 75
+	pop	di
+	pop	si
+	leave	
+	ret	
+	?debug	C E31A000200151B04
+	?debug	C E606705461626C651A02FEFF0004746869731804+
+	?debug	C 06000869456E74726965730A0C0700
+	?debug	E
+	?debug	E
+@CDescriptorTable@AllocateTable$qus	endp
+   ;	
+   ;	SELECTOR CDescriptorTable::AddSegment( SEGTYPE iType, RING iDPL, ADDRESS iBase, DWORD iLimit )
+   ;	
+	?debug	L 87
+	assume	cs:_TEXT
+@CDescriptorTable@AddSegment$qucuculul	proc	near
+	?debug	B
+	enter	2,0
+	push	si
+	push	di
+	?debug	C F826404344657363726970746F725461626C6540+
+	?debug	C 4164645365676D656E74247175637563756C756C
+	?debug	C E606694C696D69740C0A0E00000569426173650C+
+	?debug	C 0A0A0000046944504C080A080000056954797065+
+	?debug	C 080A060000047468697318040600
+	mov	si,word ptr [bp+4]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @4@86
+	call	near ptr N_OVERFLOW@
+@4@86:
+   ;	
+   ;	{
+   ;		WORD iSelector;
+   ;		SDescriptor* pNewTable;
+   ;	
+   ;		// Assume addition of segment will fail.
+   ;		iSelector = NULL;
+   ;	
+	?debug	L 93
+	mov	word ptr [bp-2],0
+   ;	
+   ;	
+   ;		// Allocate a table with one extra descriptor entry.
+   ;		pNewTable = AllocateTable( m_iDescriptorCount+1 );
+   ;	
+	?debug	L 96
+	mov	ax,word ptr [si+4]
+	inc	ax
+	push	ax
+	push	si
+	call	near ptr @CDescriptorTable@AllocateTable$qus
+	add	sp,4
+	mov	di,ax
+   ;	
+   ;		if( pNewTable!=NULL )
+   ;	
+	?debug	L 97
+	or	di,di
+	je	short @4@254
+   ;	
+   ;		{
+   ;			// Copy existing table entries.
+   ;			if( m_pTable!=NULL )
+   ;	
+	?debug	L 100
+	cmp	word ptr [si+2],0
+	je	short @4@170
+   ;	
+   ;				memcpy( pNewTable, m_pTable, sizeof(SDescriptor)*m_iDescriptorCount );
+   ;	
+	?debug	L 101
+	mov	ax,word ptr [si+4]
+	shl	ax,3
+	push	ax
+	push	word ptr [si+2]
+	push	di
+	call	near ptr _memcpy
+	add	sp,6
+@4@170:
+   ;	
+   ;	
+   ;			// Build new descriptor.
+   ;			SetDescriptor( &(pNewTable[m_iDescriptorCount]), iType, iDPL, iBase, iLimit );
+   ;	
+	?debug	L 104
+	push	dword ptr [bp+14]
+	push	dword ptr [bp+10]
+	mov	al,byte ptr [bp+8]
+	push	ax
+	mov	al,byte ptr [bp+6]
+	push	ax
+	mov	ax,word ptr [si+4]
+	shl	ax,3
+	mov	dx,di
+	add	dx,ax
+	push	dx
+	push	si
+	call	near ptr @CDescriptorTable@SetDescriptor$qp11SDescriptorucuculul
+	add	sp,16
+   ;	
+   ;	
+   ;			// Selector is simply the index multipled by eight.
+   ;			iSelector = m_iDescriptorCount<<3;
+   ;	
+	?debug	L 107
+	mov	ax,word ptr [si+4]
+	shl	ax,3
+	mov	word ptr [bp-2],ax
+   ;	
+   ;	
+   ;			// Free old table and point to new.
+   ;			if( m_pTable!=NULL )
+   ;	
+	?debug	L 110
+	cmp	word ptr [si+2],0
+	je	short @4@226
+   ;	
+   ;				free( m_pTable );
+   ;	
+	?debug	L 111
+	push	word ptr [si+2]
+	call	near ptr _free
+	pop	cx
+@4@226:
+   ;	
+   ;			m_pTable = pNewTable;
+   ;	
+	?debug	L 112
+	mov	word ptr [si+2],di
+   ;	
+   ;			m_iDescriptorCount++;
+   ;	
+	?debug	L 113
+	inc	word ptr [si+4]
+@4@254:
+   ;	
+   ;		}
+   ;	
+   ;		// Return new selector.
+   ;		return iSelector;
+   ;	
+	?debug	L 117
+	mov	ax,word ptr [bp-2]
+	jmp	short @4@282
+@4@282:
+   ;	
+   ;	}
+   ;	
+	?debug	L 118
+	pop	di
+	pop	si
+	leave	
+	ret	
+	?debug	C E609704E65775461626C651A040700096953656C+
+	?debug	C 6563746F720A02FEFF0004746869731804060005+
+	?debug	C 6954797065080A060000046944504C080A080000+
+	?debug	C 0569426173650C0A0A000006694C696D69740C0A+
+	?debug	C 0E0000
+	?debug	E
+	?debug	E
+@CDescriptorTable@AddSegment$qucuculul	endp
+   ;	
+   ;	ADDRESS CDescriptorTable::Base()
+   ;	
+	?debug	L 130
+	assume	cs:_TEXT
+@CDescriptorTable@Base$qv	proc	near
+	?debug	B
+	enter	12,0
+	push	si
+	?debug	C F819404344657363726970746F725461626C6540+
+	?debug	C 42617365247176
+	?debug	C E6047468697318040600
+	mov	si,word ptr [bp+4]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @5@86
+	call	near ptr N_OVERFLOW@
+@5@86:
+   ;	
+   ;	{
+   ;		ADDRESS iAddress;
+   ;		ADDRESS iSegment;
+   ;		ADDRESS iOffset;
+   ;	
+   ;		// Convert pointer to ssss:oooo address.
+   ;		iAddress = (ADDRESS)m_pTable;
+   ;	
+	?debug	L 137
+	mov	ax,word ptr [si+2]
+	mov	word ptr [bp-2],ds
+	mov	word ptr [bp-4],ax
+   ;	
+   ;	
+   ;		// Split components making segment byte based.
+   ;		iSegment = (iAddress&0xffff0000L)>>12;
+   ;	
+	?debug	L 140
+	mov	eax,dword ptr [bp-4]
+	and	eax,large 0FFFF0000h
+	shr	eax,12
+	mov	dword ptr [bp-8],eax
+   ;	
+   ;		iOffset  = (iAddress&0x0000ffffL);
+   ;	
+	?debug	L 141
+	mov	eax,dword ptr [bp-4]
+	and	eax,large 00000FFFFh
+	mov	dword ptr [bp-12],eax
+   ;	
+   ;	
+   ;		// Add components to get physical address.
+   ;		iAddress = iSegment + iOffset;
+   ;	
+	?debug	L 144
+	mov	eax,dword ptr [bp-8]
+	add	eax,dword ptr [bp-12]
+	mov	dword ptr [bp-4],eax
+   ;	
+   ;		return iAddress;
+   ;	
+	?debug	L 145
+	mov	eax,dword ptr [bp-4]
+	shld	edx,eax,16
+	jmp	short @5@114
+@5@114:
+   ;	
+   ;	}
+   ;	
+	?debug	L 146
+	pop	si
+	leave	
+	ret	
+	?debug	C E607694F66667365740C02F4FF0008695365676D+
+	?debug	C 656E740C02F8FF000869416464726573730C02FC+
+	?debug	C FF00047468697318040600
+	?debug	E
+	?debug	E
+@CDescriptorTable@Base$qv	endp
+   ;	
+   ;	CCPU* CDescriptorTable::CPU()
+   ;	
+	?debug	L 158
+	assume	cs:_TEXT
+@CDescriptorTable@CPU$qv	proc	near
+	?debug	B
+	push	bp
+	mov	bp,sp
+	push	si
+	?debug	C F818404344657363726970746F725461626C6540+
+	?debug	C 435055247176
+	?debug	C E6047468697318040600
+	mov	si,word ptr [bp+4]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @6@86
+	call	near ptr N_OVERFLOW@
+@6@86:
+   ;	
+   ;	{
+   ;		// Return CPU pointer.
+   ;		return m_pCPU;
+   ;	
+	?debug	L 161
+	mov	ax,word ptr [si]
+	jmp	short @6@114
+@6@114:
+   ;	
+   ;	}
+   ;	
+	?debug	L 162
+	pop	si
+	pop	bp
+	ret	
+	?debug	C E6047468697318040600
+	?debug	E
+	?debug	E
+@CDescriptorTable@CPU$qv	endp
+   ;	
+   ;	void CDescriptorTable::CPU( CCPU* pCPU )
+   ;	
+	?debug	L 174
+	assume	cs:_TEXT
+@CDescriptorTable@CPU$qp4CCPU	proc	near
+	?debug	B
+	push	bp
+	mov	bp,sp
+	push	si
+	?debug	C F81D404344657363726970746F725461626C6540+
+	?debug	C 4350552471703443435055
+	?debug	C E31C000200151D04
+	?debug	C E604704350551C0A060000047468697318040600
+	mov	si,word ptr [bp+4]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @7@86
+	call	near ptr N_OVERFLOW@
+@7@86:
+   ;	
+   ;	{
+   ;		// Set CPU pointer.
+   ;		m_pCPU = pCPU;
+   ;	
+	?debug	L 177
+	mov	ax,word ptr [bp+6]
+	mov	word ptr [si],ax
+   ;	
+   ;	}
+   ;	
+	?debug	L 178
+	pop	si
+	pop	bp
+	ret	
+	?debug	C E604746869731804060004704350551C0A060000
+	?debug	E
+	?debug	E
+@CDescriptorTable@CPU$qp4CCPU	endp
+   ;	
+   ;	WORD CDescriptorTable::Limit()
+   ;	
+	?debug	L 190
+	assume	cs:_TEXT
+@CDescriptorTable@Limit$qv	proc	near
+	?debug	B
+	push	bp
+	mov	bp,sp
+	push	si
+	?debug	C F81A404344657363726970746F725461626C6540+
+	?debug	C 4C696D6974247176
+	?debug	C E6047468697318040600
+	mov	si,word ptr [bp+4]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @8@86
+	call	near ptr N_OVERFLOW@
+@8@86:
+   ;	
+   ;	{
+   ;		WORD iLimit;
+   ;	
+   ;		// Convert table entry count to limit.
+   ;		iLimit = m_iDescriptorCount<<3;
+   ;	
+	?debug	L 195
+	mov	ax,word ptr [si+4]
+	shl	ax,3
+	mov	dx,ax
+   ;	
+   ;		iLimit--;
+   ;	
+	?debug	L 196
+	dec	dx
+   ;	
+   ;	
+   ;		return iLimit;
+   ;	
+	?debug	L 198
+	mov	ax,dx
+	jmp	short @8@114
+@8@114:
+   ;	
+   ;	}
+   ;	
+	?debug	L 199
+	pop	si
+	pop	bp
+	ret	
+	?debug	C E606694C696D69740A0402000474686973180406+
+	?debug	C 00
+	?debug	E
+	?debug	E
+@CDescriptorTable@Limit$qv	endp
+   ;	
+   ;	void CDescriptorTable::SetDescriptor( SDescriptor* pDescriptor, SEGTYPE iType, RING iRing, ADDRESS iBase, DWORD iLimit )
+   ;	
+	?debug	L 211
+	assume	cs:_TEXT
+@CDescriptorTable@SetDescriptor$qp11SDescriptorucuculul	proc	near
+	?debug	B
+	push	bp
+	mov	bp,sp
+	push	si
+	push	di
+	?debug	C F837404344657363726970746F725461626C6540+
+	?debug	C 53657444657363726970746F7224717031315344+
+	?debug	C 657363726970746F7275637563756C756C
+	?debug	C E606694C696D69740C0A1000000569426173650C+
+	?debug	C 0A0C0000056952696E67080A0A00000569547970+
+	?debug	C 65080A0800000B7044657363726970746F721A0A+
+	?debug	C 060000047468697318040600
+	mov	si,word ptr [bp+4]
+	mov	di,word ptr [bp+6]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @9@86
+	call	near ptr N_OVERFLOW@
+@9@86:
+   ;	
+   ;	{
+   ;		// Set common fields.
+   ;		pDescriptor->type 	= iType;
+   ;	
+	?debug	L 214
+	mov	al,byte ptr [bp+8]
+	and	ax,15
+	and	byte ptr [di+5],240
+	or	byte ptr [di+5],al
+   ;	
+   ;		pDescriptor->dpl 	= iRing;
+   ;	
+	?debug	L 215
+	mov	al,byte ptr [bp+10]
+	and	ax,3
+	and	byte ptr [di+5],159
+	shl	al,5
+	or	byte ptr [di+5],al
+   ;	
+   ;		pDescriptor->present= 1;
+   ;	
+	?debug	L 216
+	or	byte ptr [di+5],128
+   ;	
+   ;	
+   ;		// Check descriptor type.
+   ;		switch( iType )
+   ;	
+	?debug	L 219
+	mov	al,byte ptr [bp+8]
+	mov	ah,0
+	cmp	ax,2
+	je	short @9@226
+	cmp	ax,10
+	je	short @9@226
+	jmp	short @9@254
+@9@226:
+   ;	
+   ;		{
+   ;			case ST_EXECUTE_READ:
+   ;			case ST_READ_WRITE:
+   ;			{
+   ;				// Populate memory segment.
+   ;				SetMemoryDescriptor( pDescriptor, iBase, iLimit );
+   ;	
+	?debug	L 225
+	push	dword ptr [bp+16]
+	push	dword ptr [bp+12]
+	push	di
+	push	si
+	call	near ptr @CDescriptorTable@SetMemoryDescriptor$qp11SDescriptorulul
+	add	sp,12
+   ;	
+   ;				break;
+   ;	
+	?debug	L 226
+	jmp	short @9@254
+@9@254:
+   ;	
+   ;			}
+   ;		}
+   ;	}
+   ;	
+	?debug	L 229
+	pop	di
+	pop	si
+	pop	bp
+	ret	
+	?debug	C E60474686973180406000B704465736372697074+
+	?debug	C 6F721A0C0700056954797065080A080000056952+
+	?debug	C 696E67080A0A00000569426173650C0A0C000006+
+	?debug	C 694C696D69740C0A100000
+	?debug	E
+	?debug	E
+@CDescriptorTable@SetDescriptor$qp11SDescriptorucuculul	endp
+   ;	
+   ;	void CDescriptorTable::SetMemoryDescriptor( SDescriptor* pDescriptor, ADDRESS iBase, DWORD iLimit )
+   ;	
+	?debug	L 241
+	assume	cs:_TEXT
+@CDescriptorTable@SetMemoryDescriptor$qp11SDescriptorulul	proc	near
+	?debug	B
+	push	bp
+	mov	bp,sp
+	push	si
+	?debug	C F839404344657363726970746F725461626C6540+
+	?debug	C 5365744D656D6F727944657363726970746F7224+
+	?debug	C 717031315344657363726970746F72756C756C
+	?debug	C E606694C696D69740C0A0C00000569426173650C+
+	?debug	C 0A0800000B7044657363726970746F721A0A0600+
+	?debug	C 00047468697318040200
+	mov	dx,word ptr [bp+4]
+	mov	si,word ptr [bp+6]
+	?debug	B
+	cmp	word ptr ___brklvl,sp
+	jb	short @10@86
+	call	near ptr N_OVERFLOW@
+@10@86:
+   ;	
+   ;	{
+   ;		pDescriptor->limit_0_15  			= (WORD)(iLimit&0x0000ffffL);
+   ;	
+	?debug	L 243
+	mov	ax,word ptr [bp+12]
+	and	ax,00000FFFFh
+	mov	word ptr [si],ax
+   ;	
+   ;		pDescriptor->base_0_15   			= (WORD)(iBase&0x0000ffffL);
+   ;	
+	?debug	L 244
+	mov	ax,word ptr [bp+8]
+	and	ax,00000FFFFh
+	mov	word ptr [si+2],ax
+   ;	
+   ;		pDescriptor->base_16_23  			= (WORD)((iBase&0x00ff0000L)>>16);
+   ;	
+	?debug	L 245
+	mov	eax,dword ptr [bp+8]
+	and	eax,large 000FF0000h
+	shr	eax,16
+	mov	byte ptr [si+4],al
+   ;	
+   ;		pDescriptor->dtype		 			= 1;
+   ;	
+	?debug	L 246
+	or	byte ptr [si+5],16
+   ;	
+   ;		pDescriptor->attributes.limit_16_19	= (BYTE)((iLimit&0x000f0000L)>>16);
+   ;	
+	?debug	L 247
+	mov	eax,dword ptr [bp+12]
+	and	eax,large 0000F0000h
+	shr	eax,16
+	and	ax,15
+	and	byte ptr [si+6],240
+	or	byte ptr [si+6],al
+   ;	
+   ;		pDescriptor->attributes.available	= 0;
+   ;	
+	?debug	L 248
+	and	byte ptr [si+6],239
+   ;	
+   ;		pDescriptor->attributes.zero	 	= 0;
+   ;	
+	?debug	L 249
+	and	byte ptr [si+6],223
+   ;	
+   ;		pDescriptor->attributes.granularity = 0;
+   ;	
+	?debug	L 250
+	and	byte ptr [si+6],127
+   ;	
+   ;		pDescriptor->attributes.base_24_31  = (BYTE)((iBase&0xff000000L)>>24);
+   ;	
+	?debug	L 251
+	mov	eax,dword ptr [bp+8]
+	and	eax,large 0FF000000h
+	shr	eax,24
+	mov	byte ptr [si+7],al
+   ;	
+   ;	}
+   ;	
+	?debug	L 252
+	pop	si
+	pop	bp
+	ret	
+	?debug	C E60474686973180402000B704465736372697074+
+	?debug	C 6F721A0C06000569426173650C0A08000006694C+
+	?debug	C 696D69740C0A0C0000
+	?debug	E
+	?debug	E
+@CDescriptorTable@SetMemoryDescriptor$qp11SDescriptorulul	endp
+	?debug	C E9
+	?debug	C FA00000000
+_TEXT	ends
+_DATA	segment word public use16 'DATA'
+s@	label	byte
+_DATA	ends
+_TEXT	segment byte public use16 'CODE'
+_TEXT	ends
+	?debug	C E31D044343505542002E03
+	?debug	C ED00030000010000
+	?debug	C E319104344657363726970746F725461626C6506+
+	?debug	C 002E01
+	?debug	C ED000100002E0000
+	?debug	C E31F0000002D1A00011900234043446573637269+
+	?debug	C 70746F725461626C6540416C6C6F636174655461+
+	?debug	C 626C6524717573
+	?debug	C E3210000002D0100011900374043446573637269+
+	?debug	C 70746F725461626C654053657444657363726970+
+	?debug	C 746F7224717031315344657363726970746F7275+
+	?debug	C 637563756C756C
+	?debug	C E3230000002D0100011900394043446573637269+
+	?debug	C 70746F725461626C65405365744D656D6F727944+
+	?debug	C 657363726970746F722471703131534465736372+
+	?debug	C 6970746F72756C756C
+	?debug	C E3250000002D18000119001A4043446573637269+
+	?debug	C 70746F725461626C65402462637472247176
+	?debug	C E3270000002D01000119001A4043446573637269+
+	?debug	C 70746F725461626C65402462647472247176
+	?debug	C E3290000002D0A00011900264043446573637269+
+	?debug	C 70746F725461626C65404164645365676D656E74+
+	?debug	C 247175637563756C756C
+	?debug	C E32B0000002D0C00011900194043446573637269+
+	?debug	C 70746F725461626C654042617365247176
+	?debug	C E32D0000002D1C00011900184043446573637269+
+	?debug	C 70746F725461626C6540435055247176
+	?debug	C E32F0000002D01000119001D4043446573637269+
+	?debug	C 70746F725461626C654043505524717034434350+
+	?debug	C 55
+	?debug	C E3310000002D0A000119001A4043446573637269+
+	?debug	C 70746F725461626C65404C696D6974247176
+	?debug	C E31E044347445406002E04
+	?debug	C ED000400003C00010100
+	?debug	C E3330000002D0A00011E001A4043474454404164+
+	?debug	C 645365676D656E74247175637563756C756C
+	?debug	C E335106370755F61726368697465637475726502+
+	?debug	C 0022000080FF7F3E
+	?debug	C E337096370755F6D6F64656C020022000080FF7F+
+	?debug	C 40
+	?debug	C E3390000002D0100011D000E4043435055405072+
+	?debug	C 6F6265247176
+	?debug	C E33B0000002D1C00011D000E4043435055402462+
+	?debug	C 637472247176
+	?debug	C E33D0000002D0100011D000E4043435055402462+
+	?debug	C 647472247176
+	?debug	C E33F0000002D3500011D00154043435055404172+
+	?debug	C 63686974656374757265247176
+	?debug	C E3410000002D0C00011D000C4043435055404352+
+	?debug	C 30247176
+	?debug	C E3430000002D0100011D000D4043435055404352+
+	?debug	C 302471756C
+	?debug	C E3450000002D0100011D00154043435055404461+
+	?debug	C 74615365676D656E7424717573
+	?debug	C E3470000002D0C00011D000F4043435055404546+
+	?debug	C 6C616773247176
+	?debug	C E3490000002D0100011D00104043435055404546+
+	?debug	C 6C6167732471756C
+	?debug	C E34B0000002D0A00011D000E404343505540466C+
+	?debug	C 616773247176
+	?debug	C E34D0000002D0100011D000F404343505540466C+
+	?debug	C 61677324717573
+	?debug	C E34F0000002D0100011D001E404343505540496E+
+	?debug	C 737472756374696F6E506F696E74657224717573+
+	?debug	C 756C
+	?debug	C E35104626F6F6C020022000080FF7F47
+	?debug	C E3530000002D5100011D001A404343505540496E+
+	?debug	C 7465727275707473456E61626C6564247176
+	?debug	C E3550000002D0100011D001E404343505540496E+
+	?debug	C 7465727275707473456E61626C6564247134626F+
+	?debug	C 6F6C
+	?debug	C E3570000002D5100011D00154043435055404973+
+	?debug	C 436F6D70617469626C65247176
+	?debug	C E359000200341E04
+	?debug	C E35A0000002D5900011D000C4043435055404744+
+	?debug	C 54247176
+	?debug	C E35C0000002D0100011D00104043435055404744+
+	?debug	C 54522471756C7573
+	?debug	C E35E0000002D3700011D000E4043435055404D6F+
+	?debug	C 64656C247176
+	?debug	C E3600000002D0A00011D000C4043435055404D53+
+	?debug	C 57247176
+	?debug	C E3620000002D0100011D000D4043435055404D53+
+	?debug	C 5724717573
+	?debug	C E3640000002D5100011D001A4043435055405072+
+	?debug	C 6F74656374696F6E456E61626C6564247176
+	?debug	C E3660000002D0100011D001E4043435055405072+
+	?debug	C 6F74656374696F6E456E61626C6564247134626F+
+	?debug	C 6F6C
+	?debug	C E3680000002D0400011D00104043435055405265+
+	?debug	C 73746F7265247176
+	?debug	C E36A0000002D0100011D000D4043435055405361+
+	?debug	C 7665247176
+	?debug	C E36C0000002D0800011D0011404343505540576F+
+	?debug	C 726453697A65247176
+	?debug	C E31B0B5344657363726970746F7208002E02
+	?debug	C ED00020000490100
+	?debug	C E36E0002001E58
+	extrn	N_OVERFLOW@:far
+	extrn	___brklvl:far
+	extrn	_memcpy:near
+_pokeb	equ	pokeb
+_poke	equ	poke
+_peekb	equ	peekb
+_peek	equ	peek
+	extrn	_malloc:near
+	extrn	_free:near
+	public	@CDescriptorTable@Limit$qv
+	public	@CDescriptorTable@CPU$qp4CCPU
+	public	@CDescriptorTable@CPU$qv
+	public	@CDescriptorTable@Base$qv
+	public	@CDescriptorTable@AddSegment$qucuculul
+	public	@CDescriptorTable@$bdtr$qv
+	public	@CDescriptorTable@$bctr$qv
+	public	@CDescriptorTable@SetMemoryDescriptor$qp11SDescriptorulul
+	public	@CDescriptorTable@SetDescriptor$qp11SDescriptorucuculul
+	public	@CDescriptorTable@AllocateTable$qus
+	extrn	@$bdele$qpv:near
+	extrn	@$bnew$qui:near
+_s@	equ	s@
+	?debug	C EA0508
+	?debug	C E36F00000023040500
+	?debug	C EB0B4E5F4F564552464C4F57406F00
+	?debug	C EB095F5F5F62726B6C766C6F00
+	?debug	C E371000200150104
+	?debug	C E37000000023710000
+	?debug	C EB075F6D656D6370797000
+	?debug	C E3720664657668647212001E5F
+	?debug	C E3730008001A02
+	?debug	C E37407434F554E54525922001E65
+	?debug	C E3750005001A02
+	?debug	C E3760002001A02
+	?debug	C E3770002001A02
+	?debug	C E3780002001A02
+	?debug	C E3790002001A02
+	?debug	C E37A0002001A02
+	?debug	C E37B000A001A02
+	?debug	C E37C00000023010000
+	?debug	C E37D00000023010000
+	?debug	C E37E00000023020000
+	?debug	C E37F00000023040000
+	?debug	C E38080075245475041434B14001E72
+	?debug	C E3808105535245475308001E7D
+	?debug	C E38082045245475310001F8082
+	?debug	C E3808308574F52445245475310001E8086
+	?debug	C E3808408425954455245475308001E808F
+	?debug	C E3808507666174696E666F06001E8098
+	?debug	C E3808608444F534552524F5205001E809D
+	?debug	C E3808704786663622C001E80A2
+	?debug	C E380880005001A02
+	?debug	C E380890366636225001E80A7
+	?debug	C E3808A0008001A02
+	?debug	C E3808B0003001A02
+	?debug	C E3808C000A001A02
+	?debug	C E3808D0666696E645F742B001E80B2
+	?debug	C E3808E0015001A02
+	?debug	C E3808F000D001A02
+	?debug	C E38090056666626C6B2B001E80B9
+	?debug	C E380910015001A02
+	?debug	C E38092000D001A02
+	?debug	C E3809309646F73646174655F7405001E80C0
+	?debug	C E38094046461746504001E80C5
+	?debug	C E3809509646F7374696D655F7404001E80C9
+	?debug	C E380960474696D6504001E80CE
+	?debug	C E380970A6469736B667265655F7408001E80D3
+	?debug	C E3809805646672656508001E80D8
+	?debug	C E380990C434170706C69636174696F6E42002E05
+	?debug	C ED0005000080DD0000
+	?debug	C E3809A0000002D0C00018099001940434170706C+
+	?debug	C 69636174696F6E40436F646542617365247176
+	?debug	C E3809C0000002D0C00018099001A40434170706C+
+	?debug	C 69636174696F6E40436F64654C696D6974247176
+	?debug	C E3809E000200341D04
+	?debug	C E3809F0000002D809E0001809900144043417070+
+	?debug	C 6C69636174696F6E40435055247176
+	?debug	C E380A10000002D0C00018099001940434170706C+
+	?debug	C 69636174696F6E404461746142617365247176
+	?debug	C E380A30000002D0C00018099001A40434170706C+
+	?debug	C 69636174696F6E40446174614C696D6974247176
+	?debug	C E380A50000002D0C00018099001B40434170706C+
+	?debug	C 69636174696F6E40456E747279506F696E742471+
+	?debug	C 76
+	?debug	C E380A70000002D0400018099001440434170706C+
+	?debug	C 69636174696F6E4052756E247176
+	?debug	C E380A9095F68656170696E666F06001E80E6
+	?debug	C E380AA000200150404
+	?debug	C E380AB00000023710000
+	?debug	C EB075F6D616C6C6F6380AB00
+	?debug	C E380AC00000023010000
+	?debug	C EB055F6672656580AC00
+	?debug	C E380AD0868656170696E666F06001E80EA
+	?debug	C E380AE0B66617268656170696E666F0A001E80EE
+	?debug	C E380AF000400160101
+	?debug	C E380B010535461626C6544657363726970746F72+
+	?debug	C 06001E80F2
+	?debug	C E380B10D53466172506F696E746572333206001E+
+	?debug	C 80F5
+	?debug	C E380B20D53466172506F696E746572313604001E+
+	?debug	C 80F8
+	?debug	C E380B300000023010000
+	?debug	C EB0B40246264656C652471707680B300
+	?debug	C E380B400000023710000
+	?debug	C EB0A4024626E65772471756980B400
+	?debug	C E6095F48454150494E464F80A906000673697A65+
+	?debug	C 5F740A060009707472646966665F74040600064F+
+	?debug	C 46465345540C06000544574F52440C0600074144+
+	?debug	C 44524553530C060004574F52440A06000853454C+
+	?debug	C 4543544F520A0600075345475459504508060004+
+	?debug	C 52494E4708060004425954450806000664657668+
+	?debug	C 647272070007434F554E54525974070007524547+
+	?debug	C 5041434B80800700055352454753808107000452+
+	?debug	C 4547538082070008425954455245475380840700+
+	?debug	C 08574F5244524547538083070007666174696E66+
+	?debug	C 6F8085070008444F534552524F52808607000478+
+	?debug	C 6663628087070003666362808907000666696E64+
+	?debug	C 5F74808D0700056666626C6B8090070009646F73+
+	?debug	C 646174655F748093070004646174658094070009+
+	?debug	C 646F7374696D655F74809507000474696D658096+
+	?debug	C 07000A6469736B667265655F7480970700056466+
+	?debug	C 726565809807000C434170706C69636174696F6E+
+	?debug	C 80990700096370755F6D6F64656C370700106370+
+	?debug	C 755F617263686974656374757265350700095F68+
+	?debug	C 656170696E666F80A907000868656170696E666F+
+	?debug	C 80AD07000B66617268656170696E666F80AE0700+
+	?debug	C 04434744541E070004626F6F6C51070004434350+
+	?debug	C 551D0700104344657363726970746F725461626C+
+	?debug	C 651907000B5344657363726970746F721B070010+
+	?debug	C 535461626C6544657363726970746F7280B00700+
+	?debug	C 0D53466172506F696E746572333280B107000D53+
+	?debug	C 466172506F696E746572313680B20700
+	?debug	F pokeb 124 24 0
+	?debug	F poke 125 24 0
+	?debug	F peekb 126 24 0
+	?debug	F peek 127 24 0
+	?debug	C E200036561780C00036562780C00036563780C00+
+	?debug	C 036564780C00036564690C00036573690C000365+
+	?debug	C 62700C00036573700C000264730A000265730A00+
+	?debug	C 0266730A000267730A000665666C6167730C0003+
+	?debug	C 6372300C00036372320C00036372330C00056D5F+
+	?debug	C 4744541E000F6D5F654172636869746563747572+
+	?debug	C 653500086D5F654D6F64656C37480E4043435055+
+	?debug	C 4050726F6265247176394A0E4043435055402462+
+	?debug	C 6374722471763B490E4043435055402462647472+
+	?debug	C 2471763D48154043435055404172636869746563+
+	?debug	C 747572652471763F480C40434350554043523024+
+	?debug	C 717641480D4043435055404352302471756C4348+
+	?debug	C 15404343505540446174615365676D656E742471+
+	?debug	C 757345480F40434350554045466C616773247176+
+	?debug	C 47481040434350554045466C6167732471756C49+
+	?debug	C 480E404343505540466C6167732471764B480F40+
+	?debug	C 4343505540466C616773247175734D481E404343+
+	?debug	C 505540496E737472756374696F6E506F696E7465+
+	?debug	C 7224717573756C4F481A404343505540496E7465+
+	?debug	C 727275707473456E61626C656424717653481E40+
+	?debug	C 4343505540496E7465727275707473456E61626C+
+	?debug	C 6564247134626F6F6C5548154043435055404973+
+	?debug	C 436F6D70617469626C6524717657480C40434350+
+	?debug	C 55404744542471765A4810404343505540474454+
+	?debug	C 522471756C75735C480E4043435055404D6F6465+
+	?debug	C 6C2471765E480C4043435055404D535724717660+
+	?debug	C 480D4043435055404D53572471757362481A4043+
+	?debug	C 4350554050726F74656374696F6E456E61626C65+
+	?debug	C 6424717664481E40434350554050726F74656374+
+	?debug	C 696F6E456E61626C6564247134626F6F6C664810+
+	?debug	C 404343505540526573746F726524717668480D40+
+	?debug	C 4343505540536176652471766A48114043435055+
+	?debug	C 40576F726453697A652471766CC042000000
+	?debug	C E200066D5F704350551C00086D5F705461626C65+
+	?debug	C 1A00126D5F6944657363726970746F72436F756E+
+	?debug	C 740A4823404344657363726970746F725461626C+
+	?debug	C 6540416C6C6F636174655461626C65247175731F+
+	?debug	C 4837404344657363726970746F725461626C6540+
+	?debug	C 53657444657363726970746F7224717031315344+
+	?debug	C 657363726970746F7275637563756C756C214839+
+	?debug	C 404344657363726970746F725461626C65405365+
+	?debug	C 744D656D6F727944657363726970746F72247170+
+	?debug	C 31315344657363726970746F72756C756C234A1A+
+	?debug	C 404344657363726970746F725461626C65402462+
+	?debug	C 63747224717625491A404344657363726970746F+
+	?debug	C 725461626C654024626474722471762748264043+
+	?debug	C 44657363726970746F725461626C654041646453+
+	?debug	C 65676D656E74247175637563756C756C29481940+
+	?debug	C 4344657363726970746F725461626C6540426173+
+	?debug	C 652471762B4818404344657363726970746F7254+
+	?debug	C 61626C65404350552471762D481D404344657363+
+	?debug	C 726970746F725461626C65404350552471703443+
+	?debug	C 4350552F481A404344657363726970746F725461+
+	?debug	C 626C65404C696D697424717631C006000000
+	?debug	C E2481A4043474454404164645365676D656E7424+
+	?debug	C 7175637563756C756C33C006000000
+	?debug	C E4000743415F4E554C4C0000800743415F494150+
+	?debug	C 580100
+	?debug	C E40007434D5F4E554C4C00000008434D5F493830+
+	?debug	C 383601000009434D5F4938303238360200000943+
+	?debug	C 4D5F49383033383603000009434D5F4938303438+
+	?debug	C 360400000A434D5F50454E5449554D0500800E43+
+	?debug	C 4D5F50454E5449554D5F50524F0600
+	?debug	C E4000566616C736500008004747275650100
+	?debug	C E2000A6C696D69745F305F31350A400000000000+
+	?debug	C 0B6F66667365745F305F31350A0009626173655F+
+	?debug	C 305F31350A4002000000000873656C6563746F72+
+	?debug	C 0A000A626173655F31365F323308040474797065+
+	?debug	C 080105647479706508020364706C080107707265+
+	?debug	C 73656E7408000A617474726962757465736E4006+
+	?debug	C 000000000C6F66667365745F31365F33310AC008+
+	?debug	C 000000
+	?debug	C E2040B6C696D69745F31365F3139080109617661+
+	?debug	C 696C61626C650801047A65726F0801016408010B+
+	?debug	C 6772616E756C617269747908000A626173655F32+
+	?debug	C 345F333108C002000000
+	?debug	C E2000764685F6E65787406000764685F61747472+
+	?debug	C 04000864685F73747261740A000864685F696E74+
+	?debug	C 65720A000764685F6E616D6573C012000000
+	?debug	C E20007636F5F64617465040007636F5F63757272+
+	?debug	C 750008636F5F7468736570760008636F5F646573+
+	?debug	C 6570770008636F5F6474736570780008636F5F74+
+	?debug	C 6D73657079000C636F5F637572727374796C6502+
+	?debug	C 0009636F5F646967697473020007636F5F74696D+
+	?debug	C 65020007636F5F63617365060008636F5F646173+
+	?debug	C 65707A0007636F5F66696C6C7BC022000000
+	?debug	C E20004725F61780A0004725F62780A0004725F63+
+	?debug	C 780A0004725F64780A0004725F62700A0004725F+
+	?debug	C 73690A0004725F64690A0004725F64730A000472+
+	?debug	C 5F65730A0007725F666C6167730AC014000000
+	?debug	C E2000265730A000263730A000273730A00026473+
+	?debug	C 0AC008000000
+	?debug	C E2000178808300017780830001688084C0100000+
+	?debug	C 00
+	?debug	C E2000261780A000262780A000263780A00026478+
+	?debug	C 0A000273690A000264690A000563666C61670A00+
+	?debug	C 05666C6167730AC010000000
+	?debug	C E20002616C0800026168080002626C0800026268+
+	?debug	C 080002636C0800026368080002646C0800026468+
+	?debug	C 08C008000000
+	?debug	C E2000866695F73636C757302000866695F666174+
+	?debug	C 696402000866695F6E636C75730A000866695F62+
+	?debug	C 7973656304C006000000
+	?debug	C E2000B64655F6578746572726F7204000864655F+
+	?debug	C 636C61737302000964655F616374696F6E020008+
+	?debug	C 64655F6C6F63757302C005000000
+	?debug	C E20009786663625F666C6167020009786663625F+
+	?debug	C 7265737680880009786663625F61747472020008+
+	?debug	C 786663625F6663628089C02C000000
+	?debug	C E200096663625F64726976650200086663625F6E+
+	?debug	C 616D65808A00076663625F657874808B000A6663+
+	?debug	C 625F637572626C6B04000B6663625F7265637369+
+	?debug	C 7A6504000B6663625F66696C73697A6506000866+
+	?debug	C 63625F646174650400086663625F72657376808C+
+	?debug	C 000A6663625F63757272656302000A6663625F72+
+	?debug	C 616E646F6D06C025000000
+	?debug	C E200087265736572766564808E00066174747269+
+	?debug	C 6202000777725F74696D650A000777725F646174+
+	?debug	C 650A000473697A650600046E616D65808FC02B00+
+	?debug	C 0000
+	?debug	C E2000B66665F7265736572766564809100096666+
+	?debug	C 5F61747472696202000866665F6674696D650A00+
+	?debug	C 0866665F66646174650A000866665F6673697A65+
+	?debug	C 06000766665F6E616D658092C02B000000
+	?debug	C E200036461790800056D6F6E7468080004796561+
+	?debug	C 720A00096461796F667765656B08C005000000
+	?debug	C E2000764615F7965617204000664615F64617902+
+	?debug	C 000664615F6D6F6E02C004000000
+	?debug	C E20004686F75720800066D696E75746508000673+
+	?debug	C 65636F6E64080007687365636F6E6408C0040000+
+	?debug	C 00
+	?debug	C E2000674695F6D696E08000774695F686F757208+
+	?debug	C 000774695F68756E6408000674695F73656308C0+
+	?debug	C 04000000
+	?debug	C E2000E746F74616C5F636C7573746572730A000E+
+	?debug	C 617661696C5F636C7573746572730A0013736563+
+	?debug	C 746F72735F7065725F636C75737465720A001062+
+	?debug	C 797465735F7065725F736563746F720AC0080000+
+	?debug	C 00
+	?debug	C E2000864665F617661696C0A000864665F746F74+
+	?debug	C 616C0A000764665F627365630A000864665F7363+
+	?debug	C 6C75730AC008000000
+	?debug	C E200056D5F4350551D481940434170706C696361+
+	?debug	C 74696F6E40436F646542617365247176809A481A+
+	?debug	C 40434170706C69636174696F6E40436F64654C69+
+	?debug	C 6D6974247176809C481440434170706C69636174+
+	?debug	C 696F6E40435055247176809F481940434170706C+
+	?debug	C 69636174696F6E40446174614261736524717680+
+	?debug	C A1481A40434170706C69636174696F6E40446174+
+	?debug	C 614C696D697424717680A3481B40434170706C69+
+	?debug	C 636174696F6E40456E747279506F696E74247176+
+	?debug	C 80A5481440434170706C69636174696F6E405275+
+	?debug	C 6E24717680A7C042000000
+	?debug	C E200075F70656E74727980AA00055F73697A650A+
+	?debug	C 00085F757365666C616704C006000000
+	?debug	C E2000370747271000473697A650A0006696E5F75+
+	?debug	C 736504C006000000
+	?debug	C E2000370747280AF000473697A650C0006696E5F+
+	?debug	C 75736504C00A000000
+	?debug	C E200056C696D69740A0004626173650CC0060000+
+	?debug	C 00
+	?debug	C E200066F66667365740C000873656C6563746F72+
+	?debug	C 0AC006000000
+	?debug	C E200066F66667365740A000873656C6563746F72+
+	?debug	C 0AC004000000
+	end
+

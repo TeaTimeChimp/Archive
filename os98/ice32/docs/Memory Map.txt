@@ -1,0 +1,8 @@
+ Address	Use				Size	Notes
+----------	--------------------------	----	-----
+0x00000000	Interrupt Descriptor Table	2K	Reserved in PAM
+0x00000800	Global Descriptor Table		64K	Reserved in PAM
+0x00010800	Page Allocation Map(PAM)	128K	Reserved in PAM
+0x00030800	Page Table Directory		4K	Reserved in PAM
+0x00100000	Kernel Image			1Mb	Reserved in PAM
+0x00200000	Free Physical Memory		

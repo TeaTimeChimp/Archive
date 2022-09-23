@@ -1,0 +1,667 @@
+.386p
+
+segment _DATA public use16 'DATA'
+ends _DATA
+
+segment _TEXT public use16 'CODE'
+assume cs:_TEXT
+
+
+	; Declaration of public functions.
+	global _CPUID:proc
+	global _GetCR0:proc
+	global _GetCR2:proc
+	global _GetCR3:proc
+	global _GetCodeBase:proc
+	global _GetDataBase:proc
+	global _GetDS:proc
+	global _GetEAX:proc
+	global _GetEBP:proc
+	global _GetEBX:proc
+	global _GetECX:proc
+	global _GetEDI:proc
+	global _GetEDX:proc
+	global _GetEFlags:proc
+	global _GetES:proc
+	global _GetESI:proc
+	global _GetESP:proc
+	global _GetFS:proc
+	global _GetGS:proc
+	global _Jump32:proc
+	global _SetCR0:proc
+	global _SetEAX:proc
+	global _SetEBX:proc
+	global _SetECX:proc
+	global _SetEDX:proc
+	global _SetEFlags:proc
+	global _SetGDTR:proc
+	global _SetMSW:proc
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Performs a 48bit far call.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iPointer        = dword ptr ss:[bp+4]
+	proc _Jump32
+		enter	0, 0
+
+		jmp		iPointer
+
+		leave
+		ret
+	endp _Jump32
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Return the physical base address of the 32-bit code
+	;			  segment.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetCodeBase32
+
+		; Get real mode segment address and convert to byte address.
+		mov		edx, _TEXT
+		shl		edx, 4
+		mov		ax, dx
+		shr     edx, 16
+		ret
+
+	endp _GetCodeBase32
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Return the CPU ID.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _CPUID
+
+		;Invoke CPUID instruction.
+		mov		eax, 1
+		db 		066h, 00fh, 0a2h
+		mov		edx, eax
+		shr		edx, 16
+		ret
+
+	endp _CPUID
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Return the physical base address of the 32-bit data
+	;			  segment.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetDataBase
+
+		; Get real mode segment address and convert to byte address.
+		mov		edx, _DATA
+		shl		edx, 4
+		mov		ax, dx
+		shr		edx, 16
+		ret
+
+	endp _GetDataBase
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns the control register 0.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetCR0
+
+		; Return cr0.
+		mov		edx, cr0
+		mov		ax, dx
+		shr		edx, 16
+		ret
+
+	endp _GetCR0
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns the control register 2.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetCR2
+
+		; Return cr2.
+		mov		edx, cr2
+		mov		ax, dx
+		shr		edx, 16
+		ret
+
+	endp _GetCR2
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns the control register 3.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetCR3
+
+		; Return cr3.
+		mov		edx, cr3
+		mov		ax, dx
+		shr		edx, 16
+		ret
+
+	endp _GetCR3
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns DS.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetDS
+
+		; Return ds.
+		mov		ax, ds
+		ret
+
+	endp _GetDS
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns EAX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetEAX
+
+		; Return eax.
+		mov		edx, eax
+		shr		edx, 16
+		ret
+
+	endp _GetEAX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns EBP.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetEBP
+
+		; Return ebp.
+		mov		edx, ebp
+		mov		ax, dx
+		shr		edx, 16
+		ret
+
+	endp _GetEBP
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns EBX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetEBX
+
+		; Return ebx.
+		mov		edx, ebx
+		mov		ax, bx
+		shr		edx, 16
+		ret
+
+	endp _GetEBX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns ECX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetECX
+
+		; Return ecx.
+		mov		edx, ecx
+		mov		ax, cx
+		shr		edx, 16
+		ret
+
+	endp _GetECX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns EDI.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetEDI
+
+		; Return edi.
+		mov		edx, edi
+		mov		ax, di
+		shr		edx, 16
+		ret
+
+	endp _GetEDI
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns EDX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetEDX
+
+		; Return edx.
+		mov		ax, dx
+		shr		edx, 16
+		ret
+
+	endp _GetEDX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns the extended flag register.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetEFlags
+
+		; Return eflags.
+		pushfd
+		pop		edx
+		mov		ax, dx
+		shr		edx, 16
+		ret
+
+	endp _GetEFlags
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns ES.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetES
+
+		; Return es.
+		mov		ax, es
+		ret
+
+	endp _GetES
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns ESI.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetESI
+
+		; Return esi.
+		mov		edx, esi
+		mov		ax, si
+		shr		edx, 16
+		ret
+
+	endp _GetESI
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns ESP.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetESP
+
+		; Return esp.
+		mov		edx, esp
+		mov		ax, sp
+		shr		edx, 16
+		ret
+
+	endp _GetESP
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns FS.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetFS
+
+		; Return fs.
+		mov		ax, fs
+		ret
+
+	endp _GetFS
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Returns GS.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 16/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	proc _GetGS
+
+		; Return gs.
+		mov		ax, gs
+		ret
+
+	endp _GetGS
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets control register 0.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iCR0 	= dword ptr ss:[bp+4]
+	proc _SetCR0
+		enter	0, 0
+
+		; Set CR0.
+		mov		eax, iCR0
+		mov		cr0, eax
+
+		jmp		flushpipe
+	flushpipe:
+
+		leave
+		ret
+	endp _SetCR0
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets register EAX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 28/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iEAX 	= dword ptr ss:[bp+4]
+	proc _SetEAX
+		enter	0, 0
+
+		; Set EAX.
+		mov		eax, iEAX
+
+		leave
+		ret
+	endp _SetEAX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets register EBX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 28/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iEBX 	= dword ptr ss:[bp+4]
+	proc _SetEBX
+		enter	0, 0
+
+		; Set EBX.
+		mov		ebx, iEBX
+
+		leave
+		ret
+	endp _SetEBX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets register ECX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 26/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iECX 	= dword ptr ss:[bp+4]
+	proc _SetECX
+		enter	0, 0
+
+		; Set ECX.
+		mov		ecx, iECX
+
+		leave
+		ret
+	endp _SetECX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets register EDX.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 28/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iEDX 	= dword ptr ss:[bp+4]
+	proc _SetEDX
+		enter	0, 0
+
+		; Set EDX.
+		mov		edx, iEDX
+
+		leave
+		ret
+	endp _SetEDX
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets the extended flag register.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iFlags  = dword ptr ss:[bp+4]
+	proc _SetEFlags
+		enter	0, 0
+
+		mov		eax, iFlags
+		push	eax
+		popfd
+
+		leave
+		ret
+	endp _SetEFlags
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets the GDT register.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 17/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iDescriptor  = pword ptr ss:[bp+4]
+	proc _SetGDTR
+		enter	0, 0
+
+		lgdt	iDescriptor
+
+		leave
+		ret
+	endp _SetGDTR
+
+
+	;------------------------------------------------------------------------
+	; Purpose	: Sets the extended flag register.
+	;
+	; Author	: Daniel J Hawkins
+	;
+	; Date		: 15/01/98
+	;
+	; Modification History
+	; Date		Initials	Reason
+	;
+	;------------------------------------------------------------------------
+	iMSW    = word ptr ss:[bp+4]
+	proc _SetMSW
+		enter	0, 0
+
+		; Load machine status word.
+		mov	ax, iMSW
+		lmsw	ax
+
+		leave
+		ret
+	endp _SetMSW
+
+ends _TEXT
+
+end

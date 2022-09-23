@@ -1,0 +1,265 @@
+#include "dt.h"
+#include "main.h"
+
+#include <dos.h>
+#include <malloc.h>
+#include <memory.h>
+
+
+// Purpose	: Constructs the object.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 18/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+CDescriptorTable::CDescriptorTable()
+{
+	// Set defaults.
+	m_pCPU = NULL;
+	m_pTable = NULL;
+	m_iDescriptorCount = 0;
+
+	// Add NULL descriptor.
+	AddSegment( 0, 0, 0, 0 );
+}
+
+
+// Purpose	: Destroys the object.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+CDescriptorTable::~CDescriptorTable()
+{
+	// Free table memory if allocated.
+	if( m_pTable!=NULL )
+	{
+		free( m_pTable );
+		m_pTable = NULL;
+	}
+}
+
+
+// Purpose	: Allocates an array of descriptors.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+SDescriptor* CDescriptorTable::AllocateTable( unsigned short iEntries )
+{
+	SDescriptor* pTable;
+
+	// Assume table allocation will fail.
+	pTable = NULL;
+
+	// Bound check entry count.
+	if( iEntries<=512 )
+	{
+		// Allocate table with space for entries.
+		pTable = (SDescriptor*)malloc( sizeof(SDescriptor)*iEntries );
+	}
+
+	// Return pointer to the new table.
+	return pTable;
+}
+
+
+// Purpose	: Adds a segment to the descriptor table.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+SELECTOR CDescriptorTable::AddSegment( SEGTYPE iType, RING iDPL, ADDRESS iBase, DWORD iLimit )
+{
+	WORD iSelector;
+	SDescriptor* pNewTable;
+
+	// Assume addition of segment will fail.
+	iSelector = NULL;
+
+	// Allocate a table with one extra descriptor entry.
+	pNewTable = AllocateTable( m_iDescriptorCount+1 );
+	if( pNewTable!=NULL )
+	{
+		// Copy existing table entries.
+		if( m_pTable!=NULL )
+			memcpy( pNewTable, m_pTable, sizeof(SDescriptor)*m_iDescriptorCount );
+
+		// Build new descriptor.
+		SetDescriptor( &(pNewTable[m_iDescriptorCount]), iType, iDPL, iBase, iLimit );
+
+		// Selector is simply the index multipled by eight.
+		iSelector = m_iDescriptorCount<<3;
+
+		// Free old table and point to new.
+		if( m_pTable!=NULL )
+			free( m_pTable );
+		m_pTable = pNewTable;
+		m_iDescriptorCount++;
+	}
+
+	// Return new selector.
+	return iSelector;
+}
+
+
+// Purpose	: Returns the base address of the table.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 17/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+ADDRESS CDescriptorTable::Base()
+{
+	ADDRESS iAddress;
+	ADDRESS iSegment;
+	ADDRESS iOffset;
+
+	// Convert pointer to ssss:oooo address.
+	iAddress = (ADDRESS)m_pTable;
+
+	// Split components making segment byte based.
+	iSegment = (iAddress&0xffff0000L)>>12;
+	iOffset  = (iAddress&0x0000ffffL);
+
+	// Add components to get physical address.
+	iAddress = iSegment + iOffset;
+	return iAddress;
+}
+
+
+// Purpose	: Returns a pointer to the CPU object.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+CCPU* CDescriptorTable::CPU()
+{
+	// Return CPU pointer.
+	return m_pCPU;
+}
+
+
+// Purpose	: Sets the pointer to the CPU object.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 17/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+void CDescriptorTable::CPU( CCPU* pCPU )
+{
+	// Set CPU pointer.
+	m_pCPU = pCPU;
+}
+
+
+// Purpose	: Returns the limit of the table.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 17/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+WORD CDescriptorTable::Limit()
+{
+	WORD iLimit;
+
+	// Convert table entry count to limit.
+	iLimit = m_iDescriptorCount<<3;
+	iLimit--;
+
+	return iLimit;
+}
+
+
+// Purpose	: Populates a descriptor.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+void CDescriptorTable::SetDescriptor( SDescriptor* pDescriptor, SEGTYPE iType, RING iRing, ADDRESS iBase, DWORD iLimit )
+{
+	// Set common fields.
+	pDescriptor->type 	= iType;
+	pDescriptor->dpl 	= iRing;
+	pDescriptor->present= 1;
+
+	// Check descriptor type.
+	switch( iType )
+	{
+		case ST_EXECUTE_READ:
+		case ST_READ_WRITE:
+		{
+			// Populate memory segment.
+			SetMemoryDescriptor( pDescriptor, iBase, iLimit );
+			break;
+		}
+	}
+}
+
+
+// Purpose	: Populates a memory segment descriptor.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+void CDescriptorTable::SetMemoryDescriptor( SDescriptor* pDescriptor, ADDRESS iBase, DWORD iLimit )
+{
+	int iGranularity;
+
+	// Select appropriate granularity and limit.
+	if( iLimit>0x000fffffL )
+	{
+		iLimit >>= 12;
+		iGranularity = 1;
+	}
+	else
+		iGranularity = 0;
+
+	// Set descriptor members.
+	pDescriptor->limit_0_15  			= (WORD)(iLimit&0x0000ffffL);
+	pDescriptor->base_0_15   			= (WORD)(iBase&0x0000ffffL);
+	pDescriptor->base_16_23  			= (WORD)((iBase&0x00ff0000L)>>16);
+	pDescriptor->dtype		 			= 1;
+	pDescriptor->attributes.limit_16_19	= (BYTE)((iLimit&0x000f0000L)>>16);
+	pDescriptor->attributes.available	= 0;
+	pDescriptor->attributes.zero	 	= 0;
+	pDescriptor->attributes.d	 		= 1;
+	pDescriptor->attributes.granularity = iGranularity;
+	pDescriptor->attributes.base_24_31  = (BYTE)((iBase&0xff000000L)>>24);
+}

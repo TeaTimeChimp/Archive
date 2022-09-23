@@ -1,0 +1,30 @@
+--------------------Configuration: libc - Win32 Release--------------------
+Begining build with project "E:\WORKSHOP\os98\ice32\libc\libc.dsp", at root.
+Active configuration is Win32 (x86) Static Library (based on Win32 (x86) Static Library)
+
+Project's tools are:
+			"32-bit C/C++ Compiler for 80x86" with flags "/nologo /G5 /Zp1 /ML /W3 /GX /Zi /Od /X /FAs /Fa"Release/" /FR"Release/" /Fo"Release/" /Fd"Release/" /FD /c "
+			"Browser Database Maker" with flags "/nologo /o"Release/libc.bsc" "
+			"Library Manager" with flags "/nologo /out:"Release\libc.lib" "
+			"Custom Build" with flags ""
+			"<Component 0xa>" with flags ""
+
+Creating temp file "F:\TEMP\RSPA.tmp" with contents </nologo /G5 /Zp1 /ML /W3 /GX /Zi /Od /X /FAs /Fa"Release/" /FR"Release/" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\WORKSHOP\os98\ice32\libc\crt0.cpp"
+"E:\WORKSHOP\os98\ice32\libc\Heap.cpp"
+"E:\WORKSHOP\os98\ice32\libc\malloc.cpp"
+>
+Creating command line "cl.exe @F:\TEMP\RSPA.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Release\libc.lib"  .\Release\crt0.obj .\Release\Heap.obj .\Release\malloc.obj G:\DEVSTUDIO\VC\CRT\SRC\INTEL\ST_LIB\MEMCMP.OBJ G:\DEVSTUDIO\VC\CRT\SRC\INTEL\ST_LIB\MEMCPY.OBJ G:\DEVSTUDIO\VC\CRT\SRC\INTEL\ST_LIB\MEMSET.OBJ" 
+Compiling...
+crt0.cpp
+Heap.cpp
+malloc.cpp
+Generating Code...
+Creating library...
+Creating command line "bscmake.exe /nologo /o"Release/libc.bsc"  .\Release\crt0.sbr .\Release\Heap.sbr .\Release\malloc.sbr" 
+Creating browse info file...
+
+
+
+libc.lib - 0 error(s), 0 warning(s)

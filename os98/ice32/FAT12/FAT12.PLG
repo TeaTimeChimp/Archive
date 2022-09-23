@@ -1,0 +1,22 @@
+--------------------Configuration: FAT12 - Win32 Release--------------------
+Begining build with project "D:\workshop\os98\ice32\FAT12\FAT12.DSP", at root.
+Active configuration is Win32 (x86) Console Application (based on Win32 (x86) Console Application)
+
+Project's tools are:
+			"32-bit C/C++ Compiler for 80x86" with flags "/nologo /Zp1 /MT /W3 /GX- /Od /Ob1 /I ".\\" /FAs /Fa"Release/" /Fp"Release/FAT12.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c "
+			"Win32 Resource Compiler" with flags "/l 0x809 /d "NDEBUG" "
+			"Browser Database Maker" with flags "/nologo /o"Release/FAT12.bsc" "
+			"COFF Linker for 80x86" with flags "..\libcpp\release\libcpp.lib ..\libc\release\libc.lib /nologo /entry:"mainCRTStartup" /incremental:no /pdb:"Release/FAT12.pdb" /map:"Release/FAT12.map" /machine:I386 /nodefaultlib /out:"Release/FAT12.exe" /subsystem:native /DRIVER "
+			"Custom Build" with flags ""
+			"<Component 0xa>" with flags ""
+
+Creating temp file "C:\TEMP\RSP507.tmp" with contents <..\libcpp\release\libcpp.lib ..\libc\release\libc.lib /nologo /entry:"mainCRTStartup" /incremental:no /pdb:"Release/FAT12.pdb" /map:"Release/FAT12.map" /machine:I386 /nodefaultlib /out:"Release/FAT12.exe" /subsystem:native /DRIVER 
+.\Release\main.obj
+\workshop\os98\ice32\libc\Release\libc.lib
+\workshop\os98\ice32\libcpp\Release\libcpp.lib>
+Creating command line "link.exe @C:\TEMP\RSP507.tmp" 
+Linking...
+
+
+
+FAT12.exe - 0 error(s), 0 warning(s)

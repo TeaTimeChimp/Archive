@@ -1,0 +1,224 @@
+#include <iostream.h>
+
+#include "a20.h"
+#include "app.h"
+#include "kernel.h"
+
+#include "\workshop\library\libcpp\file.h"
+
+
+CApplication::CApplication()
+{
+}
+
+
+// Purpose	: Returns the base address of the application code.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+unsigned long CApplication::CodeBase()
+{
+	unsigned long lCodeBase;
+
+	// Get base address of 32-bit code segment.
+	lCodeBase = GetCodeBase();
+
+	// Return code segment base address.
+	return lCodeBase;
+}
+
+
+// Purpose	: Returns the limit of the application code segment.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 16/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+ADDRESS CApplication::CodeLimit()
+{
+	DWORD iCodeLimit;
+
+	// Limit code to 64K.
+	iCodeLimit = 0x0000ffff;
+
+	// Return code segment limit.
+	return iCodeLimit;
+}
+
+
+// Purpose	: Returns the base address of the application data.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+ADDRESS CApplication::DataBase()
+{
+	ADDRESS iDataBase;
+
+	// Get base address of data segment.
+	iDataBase = GetDataBase();
+
+	// Return data segment base address.
+	return iDataBase;
+}
+
+
+// Purpose	: Returns the limit of the application data segment.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 16/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+ADDRESS CApplication::DataLimit()
+{
+	DWORD iDataLimit;
+
+	// Limit data to 64K.
+	iDataLimit = 0x0000ffff;
+
+	// Return data segment limit.
+	return iDataLimit;
+}
+
+
+// Purpose	: Returns the entry point to the application code.
+//			  This is a 16-bit value relative to the 32-bit
+//			  startup segment.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+OFFSET16 CApplication::entryPoint()
+{
+	OFFSET16 iEntryPoint;
+
+	// Add entry point offset to code base.
+	iEntryPoint = (OFFSET16)main32;
+
+	// Return entry point.
+	return iEntryPoint;
+}
+
+
+// Purpose	: Returns a reference to the processor object.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 15/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+CCPU& CApplication::CPU()
+{
+	// Return reference to processor object.
+	return m_CPU;
+}
+
+
+
+// Purpose	: Object entry point.
+//
+// Author	: Daniel J Hawkins
+//
+// Date		: 18/01/98
+//
+// Modification History
+// Date		Initials	Reason
+//
+int CApplication::Run()
+{
+	SELECTOR iKernelCode;
+	SELECTOR iGlobalCode;
+	SELECTOR iGlobalData;
+	CFile KernelImage;
+	void far* pKernelImage;
+
+	// Logo.
+	cout << "digitex iAPX loader Version 2.00.003" << endl;
+
+	// Check for 32-bit processor.
+	if( m_CPU.IsCompatible()==false )
+	{
+		// Processor is not compatible.
+		cout << "\nProcessor family " << m_CPU.Model() << " is not compatible." << endl;
+	}
+	else
+	{
+		// Save CPU state at startup, will be used again on exit.
+		m_CPU.Save();
+
+		// Protection must be disabled.
+		if( m_CPU.ProtectionEnabled()==true )
+		{
+			// Protection is enabled.
+			cout << "Protection already enabled." << endl;
+		}
+		else
+		{
+			// Enable memory address line 20 to access even megabytes.
+			CA20 A20;
+			if( A20.create()== false )
+			{
+				// Can't enable A20.
+				cout << "Failed to enable address line." << endl;
+			}
+			else
+			{
+				// Construct basic global descriptor table.
+				iKernelCode = m_CPU.GDT().AddSegment( ST_EXECUTE_READ, PL_0, CodeBase(), CodeLimit() );
+				iGlobalCode = m_CPU.GDT().AddSegment( ST_EXECUTE_READ, PL_0, 0x00000000L, 0xffffffffL );
+				iGlobalData = m_CPU.GDT().AddSegment( ST_READ_WRITE, PL_0, 0x00000000L, 0xffffffffL );
+
+				// Load 32-bit kernel image.
+				pKernelImage = KernelImage.Load( "ice32.exe" );
+				if( pKernelImage==NULL )
+				{
+					// Failed to load kernel image.
+					cout << "Could not load 32bit kernel image." << endl;
+				}
+				else
+				{
+					// Suspend processing of interrupts.
+					m_CPU.InterruptsEnabled( false );
+
+					// Enable protection mechanisms.
+					m_CPU.ProtectionEnabled( true );
+
+					// Load data selector into parameter space.
+					m_CPU.Register( 1/*EBX*/, iGlobalCode );
+					m_CPU.Register( 2/*ECX*/, iGlobalData );
+
+					// Load image pointer into parameter space.
+					m_CPU.Register( 3/*EDX*/, m_CPU.PhysicalAddress(pKernelImage) );
+
+					// Restart at 32-bit entry point in with 16:16 jump.
+					m_CPU.instructionPointer( iKernelCode, entryPoint() );
+				}
+			}
+		}
+	}
+
+	// Return general error.
+	cout << "System halted in 16-bit mode." << endl;
+	return 1;
+}

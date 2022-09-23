@@ -1,0 +1,189 @@
+;-----------------------------------------------------------------------------
+;			|
+; CLASS		| KERNEL
+;			|
+; LOCATION	| \workshop\os\new\ice16\putch.asm
+;			|
+; PURPOSE	| To provide a standardized output to the video device.
+;			|
+; AUTHOR	| Daniel J Hawkins
+;			|
+; DATE		| 20/04/96
+;			|
+;-----------------------------------------------------------------------------
+; MODIFICATION HISTORY
+; DATE	    INITIALS	REASON
+;
+;-----------------------------------------------------------------------------
+
+;-----------------------------------------------------------------------------
+; Includes.
+;-----------------------------------------------------------------------------
+
+
+P386
+;-----------------------------------------------------------------------------
+; Kernel data.
+;-----------------------------------------------------------------------------
+SEGMENT KernelData USE32 PUBLIC 'kerneldata'
+
+	;Caret position.
+	Video_dX		dd	0
+	Video_dY		dd	0
+
+ENDS KernelData
+
+
+;-----------------------------------------------------------------------------
+; Kernel code.
+;-----------------------------------------------------------------------------
+SEGMENT KernelCode USE32 PUBLIC 'kernelcode'
+ASSUME cs:KernelCode, ds:KernelData
+
+
+	;----------------------------------------------------------------------------
+	;
+	; putChar
+	;
+	;	Purpose	: Writes a single one byte character to the video
+	;			  display, at the current cursor position.
+	;
+	;	Inputs 	: bl = Character to output.
+	;
+	;	Outputs	: None.
+	;
+	;----------------------------------------------------------------------------
+	PROC Video_putChar
+		push	eax
+		push	ecx
+		push	edx
+		push	edi
+
+		;Calculate screen offset.
+		mov		eax, 160
+		mul		Video_dY
+		mov		edi, Video_dX
+		shl		edi, 1
+		add		edi, eax
+
+		;Output charater to video buffer.
+		mov		[edi+0b8000h], bl
+
+		;Increment horizontal position.
+		inc     Video_dX
+
+		;If horizontal position is width then move down a line.
+		cmp		dword ptr Video_dX, 80
+		jnz		PC_set_cursor_pos
+
+		;Reset horizontal and ncerement vertical position.
+		mov		dword ptr Video_dX, 0
+		inc		Video_dY
+
+		;If vertical position is height scroll up one line.
+		cmp		dword ptr Video_dY, 25
+		jnz		PC_set_cursor_pos
+		dec		dword ptr Video_dY
+		call	Video_scrollTextUp
+
+	PC_set_cursor_pos:
+		pop	edi
+		pop	edx
+		pop	ecx
+		pop	eax
+		ret
+	ENDP Debug_writeCharacter
+
+
+	;---------------------------------------------------------------------
+	;
+	; scrollTextUp
+	;
+	;	Purpose	: Scrolls the entire text screen up.
+	;
+	;	Inputs 	: None.
+	;
+	;	Outputs	: None.
+	;
+	;---------------------------------------------------------------------
+	PROC Debug_scrollTextUp
+		push	eax
+		push	ecx
+		push	edx
+		push	edi
+		push	esi
+
+		dec		Video_dY
+
+		;Destination pointer is first line.
+		mov		edi, 0b8000h
+
+		mov		eax, 160 	               ;Point source to
+		mov		esi, eax                        ;
+
+		mov		ecx, 25
+		dec		ecx
+		mul		ecx
+		mov		ecx, eax
+		shr		ecx, 2
+
+		add		esi, 0b8000h
+		cld
+		rep		movsd
+
+		;Blank bottom row.
+		mov		ecx, 80
+		mov		eax, 07000700h
+		rep		stosd
+
+		pop	esi
+		pop	edi
+		pop	edx
+		pop	ecx
+		pop	eax
+		ret
+	ENDP Debug_scrollTextUp
+
+
+	;----------------------------------------------------------------------------
+	;
+	; WriteString
+	;
+	;	Outputs a NULL terminated string of characters.
+	;
+	;	Inputs - ds:ebx => NULL terminated string to output.
+	;
+	;	Outputs- None.
+	;
+	;----------------------------------------------------------------------------
+	PROC Debug_writeString
+		push	ebx
+		push	esi
+
+		;Set character pointer to string.
+		mov		esi, ebx
+
+	KWS_next_char:
+
+		;Get character from string.
+		mov		bl, [esi]
+
+		;Stop if character is NULL.
+		cmp		bl, NULL
+		jz		KWS_done
+
+		;Write character in bl.
+		call	Debug_writeCharacter
+
+		;Next character in string.
+		inc		esi
+		jmp		KWS_next_char
+
+	KWS_done:
+		pop		esi
+		pop		ebx
+		ret
+	end Debug_writeString
+
+ends _TEXT32
+end

@@ -1,0 +1,54 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ICE32 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "F:\TEMP\RSP100.tmp" with contents
+[
+.\libcpp\release\libcpp.lib .\libc\release\libc.lib /nologo /base:"0x00200000" /pdb:none /map:"Release/ICE32.map" /machine:I386 /nodefaultlib /out:"Release/ICE32.exe" /subsystem:native /DRIVER 
+.\Release\Application.obj
+.\Release\BootController.obj
+.\Release\BootDevice.obj
+.\Release\BootManager.obj
+.\Release\CPU.obj
+.\Release\Descriptor.obj
+.\Release\DescriptorTable.obj
+.\Release\DMAChannel.obj
+.\Release\DriveUnit.obj
+.\Release\FloppyDiskController.obj
+.\Release\GDT.obj
+.\Release\IDT.obj
+.\Release\IOManager.obj
+.\Release\IOPort.obj
+.\Release\main.obj
+.\Release\PageDirectoryEntry.obj
+.\Release\PageTableEntry.obj
+.\Release\PhysicalMemoryManager.obj
+.\Release\PIC.obj
+.\Release\Process.obj
+.\Release\ProcessManager.obj
+.\Release\System.obj
+.\Release\TaskStateSegment.obj
+.\Release\TCollection.obj
+.\Release\TCursor.obj
+.\Release\Timer.obj
+.\Release\TList.obj
+.\Release\TQueue.obj
+.\Release\DMAController.obj
+.\Release\DMAManager.obj
+.\libcpp\Release\libcpp.lib
+]
+Creating command line "link.exe @F:\TEMP\RSP100.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+ICE32.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

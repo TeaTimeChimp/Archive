@@ -1,0 +1,4 @@
+Symptom	: Reboot on enabling interrupts
+Date	: 17/12/98
+Cause	: GDT changed after IDT build and therefore IDT contained invalid CS selectors.
+

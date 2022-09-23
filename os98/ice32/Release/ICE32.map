@@ -1,0 +1,930 @@
+ ICE32
+
+ Timestamp is 37bef4ca (Sat Aug 21 19:49:46 1999)
+
+ Preferred load address is 00200000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000fde5H .text                   CODE
+ 0002:00000000 0000038fH .rdata                  DATA
+ 0003:00000000 000014d0H .data                   DATA
+ 0003:000014d0 000004b0H .bss                    DATA
+ 0004:00000000 00000010H .CRT$XCU                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:0000003f       ??0CApplication@@QAE@XZ    0020103f f   Application.obj
+ 0001:0000006b       ??1CApplication@@UAE@XZ    0020106b f   Application.obj
+ 0001:0000008a       ?halt@CApplication@@QBEXPAD@Z 0020108a f   Application.obj
+ 0001:000000d4       ?run@CApplication@@QAEHXZ  002010d4 f   Application.obj
+ 0001:00000232       ?getSystem@CApplication@@QAEAAVCSystem@@XZ 00201232 f   Application.obj
+ 0001:00000243       ?getCodeSegment@CApplication@@QAEGXZ 00201243 f   Application.obj
+ 0001:00000261       ?getProcessManager@CApplication@@QAEAAVCProcessManager@@XZ 00201261 f   Application.obj
+ 0001:00000280       ??_ECApplication@@UAEPAXI@Z 00201280 f i Application.obj
+ 0001:00000280       ??_GCApplication@@UAEPAXI@Z 00201280 f i Application.obj
+ 0001:000002b0       ?endl@@YAAAVostream@@AAV1@@Z 002012b0 f i Application.obj
+ 0001:000002d0       ?flush@@YAAAVostream@@AAV1@@Z 002012d0 f i Application.obj
+ 0001:000002e0       ??0CBootController@@QAE@XZ 002012e0 f   BootController.obj
+ 0001:000002f7       ??1CBootController@@UAE@XZ 002012f7 f   BootController.obj
+ 0001:00000310       ??_ECBootController@@UAEPAXI@Z 00201310 f i BootController.obj
+ 0001:00000310       ??_GCBootController@@UAEPAXI@Z 00201310 f i BootController.obj
+ 0001:00000340       ??0CBootDevice@@QAE@XZ     00201340 f   BootDevice.obj
+ 0001:00000357       ??1CBootDevice@@UAE@XZ     00201357 f   BootDevice.obj
+ 0001:00000370       ??_GCBootDevice@@UAEPAXI@Z 00201370 f i BootDevice.obj
+ 0001:00000370       ??_ECBootDevice@@UAEPAXI@Z 00201370 f i BootDevice.obj
+ 0001:000003a0       ??0CBootManager@@QAE@XZ    002013a0 f   BootManager.obj
+ 0001:000003b7       ??1CBootManager@@UAE@XZ    002013b7 f   BootManager.obj
+ 0001:000003cb       ?boot@CBootManager@@QAE_NXZ 002013cb f   BootManager.obj
+ 0001:00000692       ?create@CBootManager@@QAE_NXZ 00201692 f   BootManager.obj
+ 0001:000007d0       ?createBootProcess@CBootManager@@QAEPAVCProcess@@PAVCBootDevice@@@Z 002017d0 f   BootManager.obj
+ 0001:000009d0       ??_ECBootManager@@UAEPAXI@Z 002019d0 f i BootManager.obj
+ 0001:000009d0       ??_GCBootManager@@UAEPAXI@Z 002019d0 f i BootManager.obj
+ 0001:00000a00       ??_E?$TCollection@PAVCBootController@@@@UAEPAXI@Z 00201a00 f i BootManager.obj
+ 0001:00000a00       ??_G?$TCollection@PAVCBootController@@@@UAEPAXI@Z 00201a00 f i BootManager.obj
+ 0001:00000a30       ??_E?$TList@PAVCBootController@@@@UAEPAXI@Z 00201a30 f i BootManager.obj
+ 0001:00000a30       ??_G?$TList@PAVCBootController@@@@UAEPAXI@Z 00201a30 f i BootManager.obj
+ 0001:00000b70       ??0CCPU@@QAE@PAX0@Z        00201b70 f   CPU.obj
+ 0001:00000bb1       ??1CCPU@@UAE@XZ            00201bb1 f   CPU.obj
+ 0001:00000bdb       ?getCS@CCPU@@QAEGXZ        00201bdb f   CPU.obj
+ 0001:00000bf9       ?delay@CCPU@@QAEXXZ        00201bf9 f   CPU.obj
+ 0001:00000c47       ?dumpMemory@CCPU@@QAEXPAX@Z 00201c47 f   CPU.obj
+ 0001:00000dbc       ?create@CCPU@@QAE?BKXZ     00201dbc f   CPU.obj
+ 0001:00000e51       ?getGDT@CCPU@@QAEAAVCGDT@@XZ 00201e51 f   CPU.obj
+ 0001:00000e62       ?getGlobalDataSelector@CCPU@@QAEGXZ 00201e62 f   CPU.obj
+ 0001:00000e74       ?getIDT@CCPU@@QAEAAVCIDT@@XZ 00201e74 f   CPU.obj
+ 0001:00000e85       ?getSegmentType@CCPU@@QAE?AW4EDescriptorType@@G@Z 00201e85 f   CPU.obj
+ 0001:00000f25       ?enableInterrupts@CCPU@@QAEX_N@Z 00201f25 f   CPU.obj
+ 0001:00000f49       ?getPageDirectoryTable@CCPU@@QBEPBXXZ 00201f49 f   CPU.obj
+ 0001:00000f65       ?setCS@CCPU@@QAEXG@Z       00201f65 f   CPU.obj
+ 0001:00001037       ?setGlobalDataSelector@CCPU@@AAEXG@Z 00202037 f   CPU.obj
+ 0001:0000104f       ?setNT@CCPU@@QAEX_N@Z      0020204f f   CPU.obj
+ 0001:000010d3       ?setPageDirectoryTable@CCPU@@QAEPAVCPageDirectoryEntry@@PAV2@@Z 002020d3 f   CPU.obj
+ 0001:00001135       ?setPagingEnabled@CCPU@@QAEX_N@Z 00202135 f   CPU.obj
+ 0001:000011c0       ??_ECCPU@@UAEPAXI@Z        002021c0 f i CPU.obj
+ 0001:000011c0       ??_GCCPU@@UAEPAXI@Z        002021c0 f i CPU.obj
+ 0001:000011f0       ??0CDescriptor@@QAE@XZ     002021f0 f   Descriptor.obj
+ 0001:00001212       ??1CDescriptor@@QAE@XZ     00202212 f   Descriptor.obj
+ 0001:0000121d       ?getBase@CDescriptor@@QAEPAXXZ 0020221d f   Descriptor.obj
+ 0001:000012a5       ?getDType@CDescriptor@@QAE?AW4EDType@@XZ 002022a5 f   Descriptor.obj
+ 0001:000012f3       ?set@CDescriptor@@QAEXW4EPriviledgeLevel@@PAXK@Z 002022f3 f   Descriptor.obj
+ 0001:00001338       ?dump@CDescriptor@@QAEXXZ  00202338 f   Descriptor.obj
+ 0001:0000165c       ?getAvailable@CDescriptor@@QAE_NXZ 0020265c f   Descriptor.obj
+ 0001:0000167c       ?getType@CDescriptor@@QAE?AW4EDescriptorType@@XZ 0020267c f   Descriptor.obj
+ 0001:00001862       ?setAvailable@CDescriptor@@QAEX_N@Z 00202862 f   Descriptor.obj
+ 0001:0000189c       ?setMemoryDescriptor@CDescriptor@@QAEXPAXK@Z 0020289c f   Descriptor.obj
+ 0001:000018f9       ?setDPL@CDescriptor@@QAEXW4EPriviledgeLevel@@@Z 002028f9 f   Descriptor.obj
+ 0001:0000191f       ?setDWordCount@CDescriptor@@QAEXE@Z 0020291f f   Descriptor.obj
+ 0001:00001942       ?setLimit@CDescriptor@@QAEXK@Z 00202942 f   Descriptor.obj
+ 0001:0000199e       ?setPointer@CDescriptor@@QAEXGPAX@Z 0020299e f   Descriptor.obj
+ 0001:000019da       ?setPresent@CDescriptor@@QAEX_N@Z 002029da f   Descriptor.obj
+ 0001:00001a14       ?setDType@CDescriptor@@AAEXW4EDType@@@Z 00202a14 f   Descriptor.obj
+ 0001:00001a68       ?setBase@CDescriptor@@QAEXPAX@Z 00202a68 f   Descriptor.obj
+ 0001:00001b14       ?setType@CDescriptor@@QAEXW4EDescriptorType@@@Z 00202b14 f   Descriptor.obj
+ 0001:00001d00       ??0CDescriptorTable@@QAE@PAXG@Z 00202d00 f   DescriptorTable.obj
+ 0001:00001d42       ??1CDescriptorTable@@UAE@XZ 00202d42 f   DescriptorTable.obj
+ 0001:00001d56       ?addMemoryDescriptor@CDescriptorTable@@QAEGW4EDescriptorType@@W4EPriviledgeLevel@@PAXK@Z 00202d56 f   DescriptorTable.obj
+ 0001:00001de4       ?addGateDescriptor@CDescriptorTable@@QAEGW4EDescriptorType@@W4EPriviledgeLevel@@GPAX@Z 00202de4 f   DescriptorTable.obj
+ 0001:00001e73       ?create@CDescriptorTable@@QAE?BKXZ 00202e73 f   DescriptorTable.obj
+ 0001:00001ea1       ?getDescriptor@CDescriptorTable@@QAEPAVCDescriptor@@G@Z 00202ea1 f   DescriptorTable.obj
+ 0001:00001f61       ?getFirstAvailableDescriptor@CDescriptorTable@@QAEPAVCDescriptor@@XZ 00202f61 f   DescriptorTable.obj
+ 0001:00001fc2       ?getEntries@CDescriptorTable@@IBEGXZ 00202fc2 f   DescriptorTable.obj
+ 0001:00001fd4       ?first@CDescriptorTable@@IAEPAVCDescriptor@@XZ 00202fd4 f   DescriptorTable.obj
+ 0001:00001ff1       ?getBase@CDescriptorTable@@IBEPBVCDescriptor@@XZ 00202ff1 f   DescriptorTable.obj
+ 0001:00002002       ?next@CDescriptorTable@@IAEPAVCDescriptor@@XZ 00203002 f   DescriptorTable.obj
+ 0001:00002030       ?more@CDescriptorTable@@IAE_NXZ 00203030 f   DescriptorTable.obj
+ 0001:0000204f       ?setMemoryDescriptor@CDescriptorTable@@IAEGPAVCDescriptor@@W4EDescriptorType@@W4EPriviledgeLevel@@PAXK@Z 0020304f f   DescriptorTable.obj
+ 0001:000020cd       ?setGateDescriptor@CDescriptorTable@@IAEGPAVCDescriptor@@W4EDescriptorType@@W4EPriviledgeLevel@@GPAX@Z 002030cd f   DescriptorTable.obj
+ 0001:00002160       ??_ECDescriptorTable@@UAEPAXI@Z 00203160 f i DescriptorTable.obj
+ 0001:00002160       ??_GCDescriptorTable@@UAEPAXI@Z 00203160 f i DescriptorTable.obj
+ 0001:00002190       ??0CDMAChannel@@QAE@XZ     00203190 f   DMAChannel.obj
+ 0001:000021f1       ??1CDMAChannel@@UAE@XZ     002031f1 f   DMAChannel.obj
+ 0001:00002205       ?create@CDMAChannel@@QAEKPAVCDMAController@@EPBVCIOPort@@11@Z 00203205 f   DMAChannel.obj
+ 0001:0000239c       ?getNumber@CDMAChannel@@QBEEXZ 0020339c f   DMAChannel.obj
+ 0001:000023ad       ?getTransferAreaPointer@CDMAChannel@@QBEPAXXZ 002033ad f   DMAChannel.obj
+ 0001:00002419       ?getTransferAreaSize@CDMAChannel@@QBEKXZ 00203419 f   DMAChannel.obj
+ 0001:00002443       ?setDebug@CDMAChannel@@QAEX_N@Z 00203443 f   DMAChannel.obj
+ 0001:00002459       ?setTransferAreaStartPage@CDMAChannel@@AAEXK@Z 00203459 f   DMAChannel.obj
+ 0001:000024c9       ?setTransferAreaSize@CDMAChannel@@QAEKK@Z 002034c9 f   DMAChannel.obj
+ 0001:000025ce       ?setWordCount@CDMAChannel@@AAEXG@Z 002035ce f   DMAChannel.obj
+ 0001:0000261d       ?transfer@CDMAChannel@@QAEXKW4EDMAType@@W4EDMADirection@@@Z 0020361d f   DMAChannel.obj
+ 0001:00002650       ??_GCDMAChannel@@UAEPAXI@Z 00203650 f i DMAChannel.obj
+ 0001:00002650       ??_ECDMAChannel@@UAEPAXI@Z 00203650 f i DMAChannel.obj
+ 0001:00002680       ??0CDMAController@@QAE@XZ  00203680 f   DMAController.obj
+ 0001:000026a1       ??1CDMAController@@UAE@XZ  002036a1 f   DMAController.obj
+ 0001:000026b5       ?clearFlipFlop@CDMAController@@ABEXXZ 002036b5 f   DMAController.obj
+ 0001:0000270d       ?create@CDMAController@@QAE_NHGQAGEE@Z 0020370d f   DMAController.obj
+ 0001:00002b1c       ?requestChannel@CDMAController@@QBEPBVCDMAChannel@@E@Z 00203b1c f   DMAController.obj
+ 0001:00002dd8       ?setChannelEnable@CDMAController@@AAEXPAVCDMAChannel@@_N@Z 00203dd8 f   DMAController.obj
+ 0001:00002e53       ?setMode@CDMAController@@ABEXPAVCDMAChannel@@W4EDMAType@@W4EDMADirection@@@Z 00203e53 f   DMAController.obj
+ 0001:00003010       ??_GCDMAController@@UAEPAXI@Z 00204010 f i DMAController.obj
+ 0001:00003010       ??_ECDMAController@@UAEPAXI@Z 00204010 f i DMAController.obj
+ 0001:00003040       ?count@?$TList@PAVCDMAController@@@@UBE?BKXZ 00204040 f i DMAController.obj
+ 0001:00003040       ?count@?$TList@PAVCProcess@@@@UBE?BKXZ 00204040 f i DMAController.obj
+ 0001:00003040       ?count@?$TList@PAVCThread@@@@UBE?BKXZ 00204040 f i DMAController.obj
+ 0001:00003040       ?count@?$TList@PAVCDMAChannel@@@@UBE?BKXZ 00204040 f i DMAController.obj
+ 0001:00003040       ?count@?$TList@PAVCDriveUnit@@@@UBE?BKXZ 00204040 f i DMAController.obj
+ 0001:00003040       ?count@?$TList@PBVCIOPort@@@@UBE?BKXZ 00204040 f i DMAController.obj
+ 0001:00003040       ?count@?$TList@PAVCBootController@@@@UBE?BKXZ 00204040 f i DMAController.obj
+ 0001:00003060       ??_E?$TCollection@PAVCDMAChannel@@@@UAEPAXI@Z 00204060 f i DMAController.obj
+ 0001:00003060       ??_G?$TCollection@PAVCDMAChannel@@@@UAEPAXI@Z 00204060 f i DMAController.obj
+ 0001:00003090       ??_G?$TList@PAVCDMAChannel@@@@UAEPAXI@Z 00204090 f i DMAController.obj
+ 0001:00003090       ??_E?$TList@PAVCDMAChannel@@@@UAEPAXI@Z 00204090 f i DMAController.obj
+ 0001:000031d0       ??0CDMAManager@@QAE@XZ     002041d0 f   DMAManager.obj
+ 0001:000031fb       ??1CDMAManager@@UAE@XZ     002041fb f   DMAManager.obj
+ 0001:0000320f       ?create@CDMAManager@@QAE_NXZ 0020420f f   DMAManager.obj
+ 0001:000034e2       ?requestChannel@CDMAManager@@QAEPAVCDMAChannel@@E@Z 002044e2 f   DMAManager.obj
+ 0001:00003990       ??_ECDMAManager@@UAEPAXI@Z 00204990 f i DMAManager.obj
+ 0001:00003990       ??_GCDMAManager@@UAEPAXI@Z 00204990 f i DMAManager.obj
+ 0001:000039c0       ?insert@?$TList@PAVCDMAChannel@@@@QAEXPAVCDMAChannel@@@Z 002049c0 f i DMAManager.obj
+ 0001:00003a70       ?first@?$TCursor@PAVCDMAController@@@@QAEQAVCDMAController@@XZ 00204a70 f i DMAManager.obj
+ 0001:00003b20       ?next@?$TCursor@PAVCDMAController@@@@QAEQAVCDMAController@@XZ 00204b20 f i DMAManager.obj
+ 0001:00003be0       ??_G?$TCollection@PAVCDMAController@@@@UAEPAXI@Z 00204be0 f i DMAManager.obj
+ 0001:00003be0       ??_E?$TCollection@PAVCDMAController@@@@UAEPAXI@Z 00204be0 f i DMAManager.obj
+ 0001:00003c10       ??_E?$TList@PAVCDMAController@@@@UAEPAXI@Z 00204c10 f i DMAManager.obj
+ 0001:00003c10       ??_G?$TList@PAVCDMAController@@@@UAEPAXI@Z 00204c10 f i DMAManager.obj
+ 0001:00003d50       ??0CDriveUnit@@QAE@PBVCFloppyDiskController@@K@Z 00204d50 f   DriveUnit.obj
+ 0001:00003e07       ??1CDriveUnit@@UAE@XZ      00204e07 f   DriveUnit.obj
+ 0001:00003e23       ?getBytesPerBlock@CDriveUnit@@QAEKXZ 00204e23 f   DriveUnit.obj
+ 0001:00003e34       ?getCurrentCylinder@CDriveUnit@@QAEKXZ 00204e34 f   DriveUnit.obj
+ 0001:00003e45       ?getCylinder@CDriveUnit@@QAEKK@Z 00204e45 f   DriveUnit.obj
+ 0001:00003e65       ?getDataBytesPerSector@CDriveUnit@@QAEKXZ 00204e65 f   DriveUnit.obj
+ 0001:00003e7a       ?getDataLength@CDriveUnit@@QAEKXZ 00204e7a f   DriveUnit.obj
+ 0001:00003e8f       ?getGapLength@CDriveUnit@@QAEKXZ 00204e8f f   DriveUnit.obj
+ 0001:00003ea4       ?getEndOfTrack@CDriveUnit@@QAEKXZ 00204ea4 f   DriveUnit.obj
+ 0001:00003eb9       ?getHead@CDriveUnit@@QAEKK@Z 00204eb9 f   DriveUnit.obj
+ 0001:00003edb       ?getImageBase@CDriveUnit@@QAEPAXXZ 00204edb f   DriveUnit.obj
+ 0001:00003f12       ?getImageSize@CDriveUnit@@UAEKXZ 00204f12 f   DriveUnit.obj
+ 0001:00003f5c       ?getMotorOffRequestFlag@CDriveUnit@@QBE?B_NXZ 00204f5c f   DriveUnit.obj
+ 0001:00003f6d       ?getName@CDriveUnit@@UAEPADXZ 00204f6d f   DriveUnit.obj
+ 0001:00003f7e       ?getSector@CDriveUnit@@QAEKK@Z 00204f7e f   DriveUnit.obj
+ 0001:00003f9b       ?getTimeToMotorOff@CDriveUnit@@QBE?BKXZ 00204f9b f   DriveUnit.obj
+ 0001:00003fac       ?getUnitNumber@CDriveUnit@@QBE?BKXZ 00204fac f   DriveUnit.obj
+ 0001:00003fbd       ?motorOff@CDriveUnit@@QAEXXZ 00204fbd f   DriveUnit.obj
+ 0001:00003fd7       ?motorOn@CDriveUnit@@QAEXXZ 00204fd7 f   DriveUnit.obj
+ 0001:00003ff1       ?readBlocks@CDriveUnit@@QAEKKKPAX@Z 00204ff1 f   DriveUnit.obj
+ 0001:00004021       ?readBootImage@CDriveUnit@@UAEKPAX@Z 00205021 f   DriveUnit.obj
+ 0001:0000410e       ?select@CDriveUnit@@QAEXXZ 0020510e f   DriveUnit.obj
+ 0001:00004128       ?setCurrentCylinder@CDriveUnit@@QAEXK@Z 00205128 f   DriveUnit.obj
+ 0001:0000413e       ?setMotorOffRequestFlag@CDriveUnit@@QAEX_N@Z 0020513e f   DriveUnit.obj
+ 0001:00004154       ?setTimeToMotorOff@CDriveUnit@@QAEXK@Z 00205154 f   DriveUnit.obj
+ 0001:00004170       ??_GCDriveUnit@@UAEPAXI@Z  00205170 f i DriveUnit.obj
+ 0001:00004170       ??_ECDriveUnit@@UAEPAXI@Z  00205170 f i DriveUnit.obj
+ 0001:00004260       ??0CFloppyDiskController@@QAE@XZ 00205260 f   FloppyDiskController.obj
+ 0001:000046bd       ??1CFloppyDiskController@@UAE@XZ 002056bd f   FloppyDiskController.obj
+ 0001:000046d9       ?create@CFloppyDiskController@@QAE?BKXZ 002056d9 f   FloppyDiskController.obj
+ 0001:00004cd4       ?decodeStatus3@CFloppyDiskController@@AAEXE@Z 00205cd4 f   FloppyDiskController.obj
+ 0001:00004d61       ?readByte@CFloppyDiskController@@AAEJXZ 00205d61 f   FloppyDiskController.obj
+ 0001:00004e64       ?readBytes@CFloppyDiskController@@AAEJK@Z 00205e64 f   FloppyDiskController.obj
+ 0001:000050d0       ?diskISR@CFloppyDiskController@@SAXXZ 002060d0 f   FloppyDiskController.obj
+ 0001:000050e1       ?diskISRHandler@CFloppyDiskController@@AAEXXZ 002060e1 f   FloppyDiskController.obj
+ 0001:000052bf       ?enable@CFloppyDiskController@@AAE_NXZ 002062bf f   FloppyDiskController.obj
+ 0001:00005346       ?getBootDevice@CFloppyDiskController@@UAEPAVCBootDevice@@XZ 00206346 f   FloppyDiskController.obj
+ 0001:000055ec       ?getInstance@CFloppyDiskController@@CAPBV1@XZ 002065ec f   FloppyDiskController.obj
+ 0001:000055f6       ?issueCommand@CFloppyDiskController@@AAE?BKW4EFDCCommand@@@Z 002065f6 f   FloppyDiskController.obj
+ 0001:000058b2       ?motorOff@CFloppyDiskController@@AAE_NPBVCDriveUnit@@@Z 002068b2 f   FloppyDiskController.obj
+ 0001:00005971       ?requestMotorOff@CFloppyDiskController@@QAE_NPBVCDriveUnit@@@Z 00206971 f   FloppyDiskController.obj
+ 0001:000059ee       ?requestMotorOn@CFloppyDiskController@@QAE_NPBVCDriveUnit@@@Z 002069ee f   FloppyDiskController.obj
+ 0001:00005b1c       ?readBlocks@CFloppyDiskController@@QAEKPAVCDriveUnit@@KKPAX@Z 00206b1c f   FloppyDiskController.obj
+ 0001:00006605       ?reset@CFloppyDiskController@@AAE_NXZ 00207605 f   FloppyDiskController.obj
+ 0001:0000668c       ?select@CFloppyDiskController@@QAEXPBVCDriveUnit@@@Z 0020768c f   FloppyDiskController.obj
+ 0001:000066c6       ?senseInterruptStatus@CFloppyDiskController@@ABE_NXZ 002076c6 f   FloppyDiskController.obj
+ 0001:00006708       ?setStatusRegister0@CFloppyDiskController@@QAEXE@Z 00207708 f   FloppyDiskController.obj
+ 0001:0000671e       ?setWaitForInterruptFlag@CFloppyDiskController@@AAEX_N@Z 0020771e f   FloppyDiskController.obj
+ 0001:00006734       ?timerISR@CFloppyDiskController@@SAXXZ 00207734 f   FloppyDiskController.obj
+ 0001:00006745       ?timerISRHandler@CFloppyDiskController@@AAEXXZ 00207745 f   FloppyDiskController.obj
+ 0001:00006a3b       ?waitForInterrupt@CFloppyDiskController@@AAE_NXZ 00207a3b f   FloppyDiskController.obj
+ 0001:00006a7d       ?writeByte@CFloppyDiskController@@ABE?B_NE@Z 00207a7d f   FloppyDiskController.obj
+ 0001:00006b10       ??_GCFloppyDiskController@@UAEPAXI@Z 00207b10 f i FloppyDiskController.obj
+ 0001:00006b10       ??_ECFloppyDiskController@@UAEPAXI@Z 00207b10 f i FloppyDiskController.obj
+ 0001:00006b40       ?first@?$TList@PAVCProcess@@@@UBEPBVCNode@?$TCollection@PAVCProcess@@@@XZ 00207b40 f i FloppyDiskController.obj
+ 0001:00006b40       ?first@?$TList@PAVCDMAChannel@@@@UBEPBVCNode@?$TCollection@PAVCDMAChannel@@@@XZ 00207b40 f i FloppyDiskController.obj
+ 0001:00006b40       ?first@?$TList@PAVCThread@@@@UBEPBVCNode@?$TCollection@PAVCThread@@@@XZ 00207b40 f i FloppyDiskController.obj
+ 0001:00006b40       ?first@?$TList@PAVCBootController@@@@UBEPBVCNode@?$TCollection@PAVCBootController@@@@XZ 00207b40 f i FloppyDiskController.obj
+ 0001:00006b40       ?first@?$TList@PAVCDriveUnit@@@@UBEPBVCNode@?$TCollection@PAVCDriveUnit@@@@XZ 00207b40 f i FloppyDiskController.obj
+ 0001:00006b40       ?first@?$TList@PBVCIOPort@@@@UBEPBVCNode@?$TCollection@PBVCIOPort@@@@XZ 00207b40 f i FloppyDiskController.obj
+ 0001:00006b40       ?first@?$TList@PAVCDMAController@@@@UBEPBVCNode@?$TCollection@PAVCDMAController@@@@XZ 00207b40 f i FloppyDiskController.obj
+ 0001:00006b60       ?pop@?$TQueue@E@@QAEEXZ    00207b60 f i FloppyDiskController.obj
+ 0001:00006bb0       ?push@?$TQueue@E@@QAEXE@Z  00207bb0 f i FloppyDiskController.obj
+ 0001:00006c90       ??_E?$TCollection@PAVCDriveUnit@@@@UAEPAXI@Z 00207c90 f i FloppyDiskController.obj
+ 0001:00006c90       ??_G?$TCollection@PAVCDriveUnit@@@@UAEPAXI@Z 00207c90 f i FloppyDiskController.obj
+ 0001:00006cc0       ??_G?$TList@PAVCDriveUnit@@@@UAEPAXI@Z 00207cc0 f i FloppyDiskController.obj
+ 0001:00006cc0       ??_E?$TList@PAVCDriveUnit@@@@UAEPAXI@Z 00207cc0 f i FloppyDiskController.obj
+ 0001:00006e00       ??_G?$TQueue@E@@UAEPAXI@Z  00207e00 f i FloppyDiskController.obj
+ 0001:00006e00       ??_E?$TQueue@E@@UAEPAXI@Z  00207e00 f i FloppyDiskController.obj
+ 0001:00006e30       ??0CLink@?$TQueue@E@@QAE@E@Z 00207e30 f i FloppyDiskController.obj
+ 0001:00006e60       ??0CGDT@@QAE@PAXG@Z        00207e60 f   GDT.obj
+ 0001:00006e8a       ??1CGDT@@UAE@XZ            00207e8a f   GDT.obj
+ 0001:00006ea6       ?create@CGDT@@QAEKXZ       00207ea6 f   GDT.obj
+ 0001:00006f10       ??_ECGDT@@UAEPAXI@Z        00207f10 f i GDT.obj
+ 0001:00006f10       ??_GCGDT@@UAEPAXI@Z        00207f10 f i GDT.obj
+ 0001:00006f40       ??0CIDT@@QAE@PAXG@Z        00207f40 f   IDT.obj
+ 0001:00006f6a       ??1CIDT@@UAE@XZ            00207f6a f   IDT.obj
+ 0001:00006f86       ?callHandlerChain@CIDT@@CAXE@Z 00207f86 f   IDT.obj
+ 0001:00006fb6       ?create@CIDT@@QAEKXZ       00207fb6 f   IDT.obj
+ 0001:000085fa       ?initialiseHandler@CIDT@@AAEXPAVCDescriptor@@P6AXXZ@Z 002095fa f   IDT.obj
+ 0001:00008649       ?registerHandler@CIDT@@QAEXEP6AXXZ@Z 00209649 f   IDT.obj
+ 0001:000086d1       ?defaultHandler@CIDT@@CAXE@Z 002096d1 f   IDT.obj
+ 0001:00008700       ??_ECIDT@@UAEPAXI@Z        00209700 f i IDT.obj
+ 0001:00008700       ??_GCIDT@@UAEPAXI@Z        00209700 f i IDT.obj
+ 0001:00008730       ?interruptServiceRequest00@CIDT@@CAXXZ 00209730 f i IDT.obj
+ 0001:00008740       ?interruptServiceRequest01@CIDT@@CAXXZ 00209740 f i IDT.obj
+ 0001:00008750       ?interruptServiceRequest02@CIDT@@CAXXZ 00209750 f i IDT.obj
+ 0001:00008760       ?interruptServiceRequest03@CIDT@@CAXXZ 00209760 f i IDT.obj
+ 0001:00008770       ?interruptServiceRequest04@CIDT@@CAXXZ 00209770 f i IDT.obj
+ 0001:00008780       ?interruptServiceRequest05@CIDT@@CAXXZ 00209780 f i IDT.obj
+ 0001:00008790       ?interruptServiceRequest06@CIDT@@CAXXZ 00209790 f i IDT.obj
+ 0001:000087a0       ?interruptServiceRequest07@CIDT@@CAXXZ 002097a0 f i IDT.obj
+ 0001:000087b0       ?interruptServiceRequest08@CIDT@@CAXXZ 002097b0 f i IDT.obj
+ 0001:000087c0       ?interruptServiceRequest09@CIDT@@CAXXZ 002097c0 f i IDT.obj
+ 0001:000087d0       ?interruptServiceRequest0A@CIDT@@CAXXZ 002097d0 f i IDT.obj
+ 0001:000087e0       ?interruptServiceRequest0B@CIDT@@CAXXZ 002097e0 f i IDT.obj
+ 0001:000087f0       ?interruptServiceRequest0C@CIDT@@CAXXZ 002097f0 f i IDT.obj
+ 0001:00008800       ?interruptServiceRequest0D@CIDT@@CAXXZ 00209800 f i IDT.obj
+ 0001:00008810       ?interruptServiceRequest0E@CIDT@@CAXXZ 00209810 f i IDT.obj
+ 0001:00008820       ?interruptServiceRequest0F@CIDT@@CAXXZ 00209820 f i IDT.obj
+ 0001:00008830       ?interruptServiceRequest10@CIDT@@CAXXZ 00209830 f i IDT.obj
+ 0001:00008840       ?interruptServiceRequest11@CIDT@@CAXXZ 00209840 f i IDT.obj
+ 0001:00008850       ?interruptServiceRequest12@CIDT@@CAXXZ 00209850 f i IDT.obj
+ 0001:00008860       ?interruptServiceRequest13@CIDT@@CAXXZ 00209860 f i IDT.obj
+ 0001:00008870       ?interruptServiceRequest14@CIDT@@CAXXZ 00209870 f i IDT.obj
+ 0001:00008880       ?interruptServiceRequest15@CIDT@@CAXXZ 00209880 f i IDT.obj
+ 0001:00008890       ?interruptServiceRequest16@CIDT@@CAXXZ 00209890 f i IDT.obj
+ 0001:000088a0       ?interruptServiceRequest17@CIDT@@CAXXZ 002098a0 f i IDT.obj
+ 0001:000088b0       ?interruptServiceRequest18@CIDT@@CAXXZ 002098b0 f i IDT.obj
+ 0001:000088c0       ?interruptServiceRequest19@CIDT@@CAXXZ 002098c0 f i IDT.obj
+ 0001:000088d0       ?interruptServiceRequest1A@CIDT@@CAXXZ 002098d0 f i IDT.obj
+ 0001:000088e0       ?interruptServiceRequest1B@CIDT@@CAXXZ 002098e0 f i IDT.obj
+ 0001:000088f0       ?interruptServiceRequest1C@CIDT@@CAXXZ 002098f0 f i IDT.obj
+ 0001:00008900       ?interruptServiceRequest1D@CIDT@@CAXXZ 00209900 f i IDT.obj
+ 0001:00008910       ?interruptServiceRequest1E@CIDT@@CAXXZ 00209910 f i IDT.obj
+ 0001:00008920       ?interruptServiceRequest1F@CIDT@@CAXXZ 00209920 f i IDT.obj
+ 0001:00008930       ?interruptServiceRequest20@CIDT@@CAXXZ 00209930 f i IDT.obj
+ 0001:00008940       ?interruptServiceRequest21@CIDT@@CAXXZ 00209940 f i IDT.obj
+ 0001:00008950       ?interruptServiceRequest22@CIDT@@CAXXZ 00209950 f i IDT.obj
+ 0001:00008960       ?interruptServiceRequest23@CIDT@@CAXXZ 00209960 f i IDT.obj
+ 0001:00008970       ?interruptServiceRequest24@CIDT@@CAXXZ 00209970 f i IDT.obj
+ 0001:00008980       ?interruptServiceRequest25@CIDT@@CAXXZ 00209980 f i IDT.obj
+ 0001:00008990       ?interruptServiceRequest26@CIDT@@CAXXZ 00209990 f i IDT.obj
+ 0001:000089a0       ?interruptServiceRequest27@CIDT@@CAXXZ 002099a0 f i IDT.obj
+ 0001:000089b0       ?interruptServiceRequest28@CIDT@@CAXXZ 002099b0 f i IDT.obj
+ 0001:000089c0       ?interruptServiceRequest29@CIDT@@CAXXZ 002099c0 f i IDT.obj
+ 0001:000089d0       ?interruptServiceRequest2A@CIDT@@CAXXZ 002099d0 f i IDT.obj
+ 0001:000089e0       ?interruptServiceRequest2B@CIDT@@CAXXZ 002099e0 f i IDT.obj
+ 0001:000089f0       ?interruptServiceRequest2C@CIDT@@CAXXZ 002099f0 f i IDT.obj
+ 0001:00008a00       ?interruptServiceRequest2D@CIDT@@CAXXZ 00209a00 f i IDT.obj
+ 0001:00008a10       ?interruptServiceRequest2E@CIDT@@CAXXZ 00209a10 f i IDT.obj
+ 0001:00008a20       ?interruptServiceRequest2F@CIDT@@CAXXZ 00209a20 f i IDT.obj
+ 0001:00008a30       ?interruptServiceRequest30@CIDT@@CAXXZ 00209a30 f i IDT.obj
+ 0001:00008a40       ?interruptServiceRequest31@CIDT@@CAXXZ 00209a40 f i IDT.obj
+ 0001:00008a50       ?interruptServiceRequest32@CIDT@@CAXXZ 00209a50 f i IDT.obj
+ 0001:00008a60       ?interruptServiceRequest33@CIDT@@CAXXZ 00209a60 f i IDT.obj
+ 0001:00008a70       ?interruptServiceRequest34@CIDT@@CAXXZ 00209a70 f i IDT.obj
+ 0001:00008a80       ?interruptServiceRequest35@CIDT@@CAXXZ 00209a80 f i IDT.obj
+ 0001:00008a90       ?interruptServiceRequest36@CIDT@@CAXXZ 00209a90 f i IDT.obj
+ 0001:00008aa0       ?interruptServiceRequest37@CIDT@@CAXXZ 00209aa0 f i IDT.obj
+ 0001:00008ab0       ?interruptServiceRequest38@CIDT@@CAXXZ 00209ab0 f i IDT.obj
+ 0001:00008ac0       ?interruptServiceRequest39@CIDT@@CAXXZ 00209ac0 f i IDT.obj
+ 0001:00008ad0       ?interruptServiceRequest3A@CIDT@@CAXXZ 00209ad0 f i IDT.obj
+ 0001:00008ae0       ?interruptServiceRequest3B@CIDT@@CAXXZ 00209ae0 f i IDT.obj
+ 0001:00008af0       ?interruptServiceRequest3C@CIDT@@CAXXZ 00209af0 f i IDT.obj
+ 0001:00008b00       ?interruptServiceRequest3D@CIDT@@CAXXZ 00209b00 f i IDT.obj
+ 0001:00008b10       ?interruptServiceRequest3E@CIDT@@CAXXZ 00209b10 f i IDT.obj
+ 0001:00008b20       ?interruptServiceRequest3F@CIDT@@CAXXZ 00209b20 f i IDT.obj
+ 0001:00008b30       ?interruptServiceRequest40@CIDT@@CAXXZ 00209b30 f i IDT.obj
+ 0001:00008b40       ?interruptServiceRequest41@CIDT@@CAXXZ 00209b40 f i IDT.obj
+ 0001:00008b50       ?interruptServiceRequest42@CIDT@@CAXXZ 00209b50 f i IDT.obj
+ 0001:00008b60       ?interruptServiceRequest43@CIDT@@CAXXZ 00209b60 f i IDT.obj
+ 0001:00008b70       ?interruptServiceRequest44@CIDT@@CAXXZ 00209b70 f i IDT.obj
+ 0001:00008b80       ?interruptServiceRequest45@CIDT@@CAXXZ 00209b80 f i IDT.obj
+ 0001:00008b90       ?interruptServiceRequest46@CIDT@@CAXXZ 00209b90 f i IDT.obj
+ 0001:00008ba0       ?interruptServiceRequest47@CIDT@@CAXXZ 00209ba0 f i IDT.obj
+ 0001:00008bb0       ?interruptServiceRequest48@CIDT@@CAXXZ 00209bb0 f i IDT.obj
+ 0001:00008bc0       ?interruptServiceRequest49@CIDT@@CAXXZ 00209bc0 f i IDT.obj
+ 0001:00008bd0       ?interruptServiceRequest4A@CIDT@@CAXXZ 00209bd0 f i IDT.obj
+ 0001:00008be0       ?interruptServiceRequest4B@CIDT@@CAXXZ 00209be0 f i IDT.obj
+ 0001:00008bf0       ?interruptServiceRequest4C@CIDT@@CAXXZ 00209bf0 f i IDT.obj
+ 0001:00008c00       ?interruptServiceRequest4D@CIDT@@CAXXZ 00209c00 f i IDT.obj
+ 0001:00008c10       ?interruptServiceRequest4E@CIDT@@CAXXZ 00209c10 f i IDT.obj
+ 0001:00008c20       ?interruptServiceRequest4F@CIDT@@CAXXZ 00209c20 f i IDT.obj
+ 0001:00008c30       ?interruptServiceRequest50@CIDT@@CAXXZ 00209c30 f i IDT.obj
+ 0001:00008c40       ?interruptServiceRequest51@CIDT@@CAXXZ 00209c40 f i IDT.obj
+ 0001:00008c50       ?interruptServiceRequest52@CIDT@@CAXXZ 00209c50 f i IDT.obj
+ 0001:00008c60       ?interruptServiceRequest53@CIDT@@CAXXZ 00209c60 f i IDT.obj
+ 0001:00008c70       ?interruptServiceRequest54@CIDT@@CAXXZ 00209c70 f i IDT.obj
+ 0001:00008c80       ?interruptServiceRequest55@CIDT@@CAXXZ 00209c80 f i IDT.obj
+ 0001:00008c90       ?interruptServiceRequest56@CIDT@@CAXXZ 00209c90 f i IDT.obj
+ 0001:00008ca0       ?interruptServiceRequest57@CIDT@@CAXXZ 00209ca0 f i IDT.obj
+ 0001:00008cb0       ?interruptServiceRequest58@CIDT@@CAXXZ 00209cb0 f i IDT.obj
+ 0001:00008cc0       ?interruptServiceRequest59@CIDT@@CAXXZ 00209cc0 f i IDT.obj
+ 0001:00008cd0       ?interruptServiceRequest5A@CIDT@@CAXXZ 00209cd0 f i IDT.obj
+ 0001:00008ce0       ?interruptServiceRequest5B@CIDT@@CAXXZ 00209ce0 f i IDT.obj
+ 0001:00008cf0       ?interruptServiceRequest5C@CIDT@@CAXXZ 00209cf0 f i IDT.obj
+ 0001:00008d00       ?interruptServiceRequest5D@CIDT@@CAXXZ 00209d00 f i IDT.obj
+ 0001:00008d10       ?interruptServiceRequest5E@CIDT@@CAXXZ 00209d10 f i IDT.obj
+ 0001:00008d20       ?interruptServiceRequest5F@CIDT@@CAXXZ 00209d20 f i IDT.obj
+ 0001:00008d30       ?interruptServiceRequest60@CIDT@@CAXXZ 00209d30 f i IDT.obj
+ 0001:00008d40       ?interruptServiceRequest61@CIDT@@CAXXZ 00209d40 f i IDT.obj
+ 0001:00008d50       ?interruptServiceRequest62@CIDT@@CAXXZ 00209d50 f i IDT.obj
+ 0001:00008d60       ?interruptServiceRequest63@CIDT@@CAXXZ 00209d60 f i IDT.obj
+ 0001:00008d70       ?interruptServiceRequest64@CIDT@@CAXXZ 00209d70 f i IDT.obj
+ 0001:00008d80       ?interruptServiceRequest65@CIDT@@CAXXZ 00209d80 f i IDT.obj
+ 0001:00008d90       ?interruptServiceRequest66@CIDT@@CAXXZ 00209d90 f i IDT.obj
+ 0001:00008da0       ?interruptServiceRequest67@CIDT@@CAXXZ 00209da0 f i IDT.obj
+ 0001:00008db0       ?interruptServiceRequest68@CIDT@@CAXXZ 00209db0 f i IDT.obj
+ 0001:00008dc0       ?interruptServiceRequest69@CIDT@@CAXXZ 00209dc0 f i IDT.obj
+ 0001:00008dd0       ?interruptServiceRequest6A@CIDT@@CAXXZ 00209dd0 f i IDT.obj
+ 0001:00008de0       ?interruptServiceRequest6B@CIDT@@CAXXZ 00209de0 f i IDT.obj
+ 0001:00008df0       ?interruptServiceRequest6C@CIDT@@CAXXZ 00209df0 f i IDT.obj
+ 0001:00008e00       ?interruptServiceRequest6D@CIDT@@CAXXZ 00209e00 f i IDT.obj
+ 0001:00008e10       ?interruptServiceRequest6E@CIDT@@CAXXZ 00209e10 f i IDT.obj
+ 0001:00008e20       ?interruptServiceRequest6F@CIDT@@CAXXZ 00209e20 f i IDT.obj
+ 0001:00008e30       ?interruptServiceRequest70@CIDT@@CAXXZ 00209e30 f i IDT.obj
+ 0001:00008e40       ?interruptServiceRequest71@CIDT@@CAXXZ 00209e40 f i IDT.obj
+ 0001:00008e50       ?interruptServiceRequest72@CIDT@@CAXXZ 00209e50 f i IDT.obj
+ 0001:00008e60       ?interruptServiceRequest73@CIDT@@CAXXZ 00209e60 f i IDT.obj
+ 0001:00008e70       ?interruptServiceRequest74@CIDT@@CAXXZ 00209e70 f i IDT.obj
+ 0001:00008e80       ?interruptServiceRequest75@CIDT@@CAXXZ 00209e80 f i IDT.obj
+ 0001:00008e90       ?interruptServiceRequest76@CIDT@@CAXXZ 00209e90 f i IDT.obj
+ 0001:00008ea0       ?interruptServiceRequest77@CIDT@@CAXXZ 00209ea0 f i IDT.obj
+ 0001:00008eb0       ?interruptServiceRequest78@CIDT@@CAXXZ 00209eb0 f i IDT.obj
+ 0001:00008ec0       ?interruptServiceRequest79@CIDT@@CAXXZ 00209ec0 f i IDT.obj
+ 0001:00008ed0       ?interruptServiceRequest7A@CIDT@@CAXXZ 00209ed0 f i IDT.obj
+ 0001:00008ee0       ?interruptServiceRequest7B@CIDT@@CAXXZ 00209ee0 f i IDT.obj
+ 0001:00008ef0       ?interruptServiceRequest7C@CIDT@@CAXXZ 00209ef0 f i IDT.obj
+ 0001:00008f00       ?interruptServiceRequest7D@CIDT@@CAXXZ 00209f00 f i IDT.obj
+ 0001:00008f10       ?interruptServiceRequest7E@CIDT@@CAXXZ 00209f10 f i IDT.obj
+ 0001:00008f20       ?interruptServiceRequest7F@CIDT@@CAXXZ 00209f20 f i IDT.obj
+ 0001:00008f30       ?interruptServiceRequest80@CIDT@@CAXXZ 00209f30 f i IDT.obj
+ 0001:00008f50       ?interruptServiceRequest81@CIDT@@CAXXZ 00209f50 f i IDT.obj
+ 0001:00008f70       ?interruptServiceRequest82@CIDT@@CAXXZ 00209f70 f i IDT.obj
+ 0001:00008f90       ?interruptServiceRequest83@CIDT@@CAXXZ 00209f90 f i IDT.obj
+ 0001:00008fb0       ?interruptServiceRequest84@CIDT@@CAXXZ 00209fb0 f i IDT.obj
+ 0001:00008fd0       ?interruptServiceRequest85@CIDT@@CAXXZ 00209fd0 f i IDT.obj
+ 0001:00008ff0       ?interruptServiceRequest86@CIDT@@CAXXZ 00209ff0 f i IDT.obj
+ 0001:00009010       ?interruptServiceRequest87@CIDT@@CAXXZ 0020a010 f i IDT.obj
+ 0001:00009030       ?interruptServiceRequest88@CIDT@@CAXXZ 0020a030 f i IDT.obj
+ 0001:00009050       ?interruptServiceRequest89@CIDT@@CAXXZ 0020a050 f i IDT.obj
+ 0001:00009070       ?interruptServiceRequest8A@CIDT@@CAXXZ 0020a070 f i IDT.obj
+ 0001:00009090       ?interruptServiceRequest8B@CIDT@@CAXXZ 0020a090 f i IDT.obj
+ 0001:000090b0       ?interruptServiceRequest8C@CIDT@@CAXXZ 0020a0b0 f i IDT.obj
+ 0001:000090d0       ?interruptServiceRequest8D@CIDT@@CAXXZ 0020a0d0 f i IDT.obj
+ 0001:000090f0       ?interruptServiceRequest8E@CIDT@@CAXXZ 0020a0f0 f i IDT.obj
+ 0001:00009110       ?interruptServiceRequest8F@CIDT@@CAXXZ 0020a110 f i IDT.obj
+ 0001:00009130       ?interruptServiceRequest90@CIDT@@CAXXZ 0020a130 f i IDT.obj
+ 0001:00009150       ?interruptServiceRequest91@CIDT@@CAXXZ 0020a150 f i IDT.obj
+ 0001:00009170       ?interruptServiceRequest92@CIDT@@CAXXZ 0020a170 f i IDT.obj
+ 0001:00009190       ?interruptServiceRequest93@CIDT@@CAXXZ 0020a190 f i IDT.obj
+ 0001:000091b0       ?interruptServiceRequest94@CIDT@@CAXXZ 0020a1b0 f i IDT.obj
+ 0001:000091d0       ?interruptServiceRequest95@CIDT@@CAXXZ 0020a1d0 f i IDT.obj
+ 0001:000091f0       ?interruptServiceRequest96@CIDT@@CAXXZ 0020a1f0 f i IDT.obj
+ 0001:00009210       ?interruptServiceRequest97@CIDT@@CAXXZ 0020a210 f i IDT.obj
+ 0001:00009230       ?interruptServiceRequest98@CIDT@@CAXXZ 0020a230 f i IDT.obj
+ 0001:00009250       ?interruptServiceRequest99@CIDT@@CAXXZ 0020a250 f i IDT.obj
+ 0001:00009270       ?interruptServiceRequest9A@CIDT@@CAXXZ 0020a270 f i IDT.obj
+ 0001:00009290       ?interruptServiceRequest9B@CIDT@@CAXXZ 0020a290 f i IDT.obj
+ 0001:000092b0       ?interruptServiceRequest9C@CIDT@@CAXXZ 0020a2b0 f i IDT.obj
+ 0001:000092d0       ?interruptServiceRequest9D@CIDT@@CAXXZ 0020a2d0 f i IDT.obj
+ 0001:000092f0       ?interruptServiceRequest9E@CIDT@@CAXXZ 0020a2f0 f i IDT.obj
+ 0001:00009310       ?interruptServiceRequest9F@CIDT@@CAXXZ 0020a310 f i IDT.obj
+ 0001:00009330       ?interruptServiceRequestA0@CIDT@@CAXXZ 0020a330 f i IDT.obj
+ 0001:00009350       ?interruptServiceRequestA1@CIDT@@CAXXZ 0020a350 f i IDT.obj
+ 0001:00009370       ?interruptServiceRequestA2@CIDT@@CAXXZ 0020a370 f i IDT.obj
+ 0001:00009390       ?interruptServiceRequestA3@CIDT@@CAXXZ 0020a390 f i IDT.obj
+ 0001:000093b0       ?interruptServiceRequestA4@CIDT@@CAXXZ 0020a3b0 f i IDT.obj
+ 0001:000093d0       ?interruptServiceRequestA5@CIDT@@CAXXZ 0020a3d0 f i IDT.obj
+ 0001:000093f0       ?interruptServiceRequestA6@CIDT@@CAXXZ 0020a3f0 f i IDT.obj
+ 0001:00009410       ?interruptServiceRequestA7@CIDT@@CAXXZ 0020a410 f i IDT.obj
+ 0001:00009430       ?interruptServiceRequestA8@CIDT@@CAXXZ 0020a430 f i IDT.obj
+ 0001:00009450       ?interruptServiceRequestA9@CIDT@@CAXXZ 0020a450 f i IDT.obj
+ 0001:00009470       ?interruptServiceRequestAA@CIDT@@CAXXZ 0020a470 f i IDT.obj
+ 0001:00009490       ?interruptServiceRequestAB@CIDT@@CAXXZ 0020a490 f i IDT.obj
+ 0001:000094b0       ?interruptServiceRequestAC@CIDT@@CAXXZ 0020a4b0 f i IDT.obj
+ 0001:000094d0       ?interruptServiceRequestAD@CIDT@@CAXXZ 0020a4d0 f i IDT.obj
+ 0001:000094f0       ?interruptServiceRequestAE@CIDT@@CAXXZ 0020a4f0 f i IDT.obj
+ 0001:00009510       ?interruptServiceRequestAF@CIDT@@CAXXZ 0020a510 f i IDT.obj
+ 0001:00009530       ?interruptServiceRequestB0@CIDT@@CAXXZ 0020a530 f i IDT.obj
+ 0001:00009550       ?interruptServiceRequestB1@CIDT@@CAXXZ 0020a550 f i IDT.obj
+ 0001:00009570       ?interruptServiceRequestB2@CIDT@@CAXXZ 0020a570 f i IDT.obj
+ 0001:00009590       ?interruptServiceRequestB3@CIDT@@CAXXZ 0020a590 f i IDT.obj
+ 0001:000095b0       ?interruptServiceRequestB4@CIDT@@CAXXZ 0020a5b0 f i IDT.obj
+ 0001:000095d0       ?interruptServiceRequestB5@CIDT@@CAXXZ 0020a5d0 f i IDT.obj
+ 0001:000095f0       ?interruptServiceRequestB6@CIDT@@CAXXZ 0020a5f0 f i IDT.obj
+ 0001:00009610       ?interruptServiceRequestB7@CIDT@@CAXXZ 0020a610 f i IDT.obj
+ 0001:00009630       ?interruptServiceRequestB8@CIDT@@CAXXZ 0020a630 f i IDT.obj
+ 0001:00009650       ?interruptServiceRequestB9@CIDT@@CAXXZ 0020a650 f i IDT.obj
+ 0001:00009670       ?interruptServiceRequestBA@CIDT@@CAXXZ 0020a670 f i IDT.obj
+ 0001:00009690       ?interruptServiceRequestBB@CIDT@@CAXXZ 0020a690 f i IDT.obj
+ 0001:000096b0       ?interruptServiceRequestBC@CIDT@@CAXXZ 0020a6b0 f i IDT.obj
+ 0001:000096d0       ?interruptServiceRequestBD@CIDT@@CAXXZ 0020a6d0 f i IDT.obj
+ 0001:000096f0       ?interruptServiceRequestBE@CIDT@@CAXXZ 0020a6f0 f i IDT.obj
+ 0001:00009710       ?interruptServiceRequestBF@CIDT@@CAXXZ 0020a710 f i IDT.obj
+ 0001:00009730       ?interruptServiceRequestC0@CIDT@@CAXXZ 0020a730 f i IDT.obj
+ 0001:00009750       ?interruptServiceRequestC1@CIDT@@CAXXZ 0020a750 f i IDT.obj
+ 0001:00009770       ?interruptServiceRequestC2@CIDT@@CAXXZ 0020a770 f i IDT.obj
+ 0001:00009790       ?interruptServiceRequestC3@CIDT@@CAXXZ 0020a790 f i IDT.obj
+ 0001:000097b0       ?interruptServiceRequestC4@CIDT@@CAXXZ 0020a7b0 f i IDT.obj
+ 0001:000097d0       ?interruptServiceRequestC5@CIDT@@CAXXZ 0020a7d0 f i IDT.obj
+ 0001:000097f0       ?interruptServiceRequestC6@CIDT@@CAXXZ 0020a7f0 f i IDT.obj
+ 0001:00009810       ?interruptServiceRequestC7@CIDT@@CAXXZ 0020a810 f i IDT.obj
+ 0001:00009830       ?interruptServiceRequestC8@CIDT@@CAXXZ 0020a830 f i IDT.obj
+ 0001:00009850       ?interruptServiceRequestC9@CIDT@@CAXXZ 0020a850 f i IDT.obj
+ 0001:00009870       ?interruptServiceRequestCA@CIDT@@CAXXZ 0020a870 f i IDT.obj
+ 0001:00009890       ?interruptServiceRequestCB@CIDT@@CAXXZ 0020a890 f i IDT.obj
+ 0001:000098b0       ?interruptServiceRequestCC@CIDT@@CAXXZ 0020a8b0 f i IDT.obj
+ 0001:000098d0       ?interruptServiceRequestCD@CIDT@@CAXXZ 0020a8d0 f i IDT.obj
+ 0001:000098f0       ?interruptServiceRequestCE@CIDT@@CAXXZ 0020a8f0 f i IDT.obj
+ 0001:00009910       ?interruptServiceRequestCF@CIDT@@CAXXZ 0020a910 f i IDT.obj
+ 0001:00009930       ?interruptServiceRequestD0@CIDT@@CAXXZ 0020a930 f i IDT.obj
+ 0001:00009950       ?interruptServiceRequestD1@CIDT@@CAXXZ 0020a950 f i IDT.obj
+ 0001:00009970       ?interruptServiceRequestD2@CIDT@@CAXXZ 0020a970 f i IDT.obj
+ 0001:00009990       ?interruptServiceRequestD3@CIDT@@CAXXZ 0020a990 f i IDT.obj
+ 0001:000099b0       ?interruptServiceRequestD4@CIDT@@CAXXZ 0020a9b0 f i IDT.obj
+ 0001:000099d0       ?interruptServiceRequestD5@CIDT@@CAXXZ 0020a9d0 f i IDT.obj
+ 0001:000099f0       ?interruptServiceRequestD6@CIDT@@CAXXZ 0020a9f0 f i IDT.obj
+ 0001:00009a10       ?interruptServiceRequestD7@CIDT@@CAXXZ 0020aa10 f i IDT.obj
+ 0001:00009a30       ?interruptServiceRequestD8@CIDT@@CAXXZ 0020aa30 f i IDT.obj
+ 0001:00009a50       ?interruptServiceRequestD9@CIDT@@CAXXZ 0020aa50 f i IDT.obj
+ 0001:00009a70       ?interruptServiceRequestDA@CIDT@@CAXXZ 0020aa70 f i IDT.obj
+ 0001:00009a90       ?interruptServiceRequestDB@CIDT@@CAXXZ 0020aa90 f i IDT.obj
+ 0001:00009ab0       ?interruptServiceRequestDC@CIDT@@CAXXZ 0020aab0 f i IDT.obj
+ 0001:00009ad0       ?interruptServiceRequestDD@CIDT@@CAXXZ 0020aad0 f i IDT.obj
+ 0001:00009af0       ?interruptServiceRequestDE@CIDT@@CAXXZ 0020aaf0 f i IDT.obj
+ 0001:00009b10       ?interruptServiceRequestDF@CIDT@@CAXXZ 0020ab10 f i IDT.obj
+ 0001:00009b30       ?interruptServiceRequestE0@CIDT@@CAXXZ 0020ab30 f i IDT.obj
+ 0001:00009b50       ?interruptServiceRequestE1@CIDT@@CAXXZ 0020ab50 f i IDT.obj
+ 0001:00009b70       ?interruptServiceRequestE2@CIDT@@CAXXZ 0020ab70 f i IDT.obj
+ 0001:00009b90       ?interruptServiceRequestE3@CIDT@@CAXXZ 0020ab90 f i IDT.obj
+ 0001:00009bb0       ?interruptServiceRequestE4@CIDT@@CAXXZ 0020abb0 f i IDT.obj
+ 0001:00009bd0       ?interruptServiceRequestE5@CIDT@@CAXXZ 0020abd0 f i IDT.obj
+ 0001:00009bf0       ?interruptServiceRequestE6@CIDT@@CAXXZ 0020abf0 f i IDT.obj
+ 0001:00009c10       ?interruptServiceRequestE7@CIDT@@CAXXZ 0020ac10 f i IDT.obj
+ 0001:00009c30       ?interruptServiceRequestE8@CIDT@@CAXXZ 0020ac30 f i IDT.obj
+ 0001:00009c50       ?interruptServiceRequestE9@CIDT@@CAXXZ 0020ac50 f i IDT.obj
+ 0001:00009c70       ?interruptServiceRequestEA@CIDT@@CAXXZ 0020ac70 f i IDT.obj
+ 0001:00009c90       ?interruptServiceRequestEB@CIDT@@CAXXZ 0020ac90 f i IDT.obj
+ 0001:00009cb0       ?interruptServiceRequestEC@CIDT@@CAXXZ 0020acb0 f i IDT.obj
+ 0001:00009cd0       ?interruptServiceRequestED@CIDT@@CAXXZ 0020acd0 f i IDT.obj
+ 0001:00009cf0       ?interruptServiceRequestEE@CIDT@@CAXXZ 0020acf0 f i IDT.obj
+ 0001:00009d10       ?interruptServiceRequestEF@CIDT@@CAXXZ 0020ad10 f i IDT.obj
+ 0001:00009d30       ?interruptServiceRequestF0@CIDT@@CAXXZ 0020ad30 f i IDT.obj
+ 0001:00009d50       ?interruptServiceRequestF1@CIDT@@CAXXZ 0020ad50 f i IDT.obj
+ 0001:00009d70       ?interruptServiceRequestF2@CIDT@@CAXXZ 0020ad70 f i IDT.obj
+ 0001:00009d90       ?interruptServiceRequestF3@CIDT@@CAXXZ 0020ad90 f i IDT.obj
+ 0001:00009db0       ?interruptServiceRequestF4@CIDT@@CAXXZ 0020adb0 f i IDT.obj
+ 0001:00009dd0       ?interruptServiceRequestF5@CIDT@@CAXXZ 0020add0 f i IDT.obj
+ 0001:00009df0       ?interruptServiceRequestF6@CIDT@@CAXXZ 0020adf0 f i IDT.obj
+ 0001:00009e10       ?interruptServiceRequestF7@CIDT@@CAXXZ 0020ae10 f i IDT.obj
+ 0001:00009e30       ?interruptServiceRequestF8@CIDT@@CAXXZ 0020ae30 f i IDT.obj
+ 0001:00009e50       ?interruptServiceRequestF9@CIDT@@CAXXZ 0020ae50 f i IDT.obj
+ 0001:00009e70       ?interruptServiceRequestFA@CIDT@@CAXXZ 0020ae70 f i IDT.obj
+ 0001:00009e90       ?interruptServiceRequestFB@CIDT@@CAXXZ 0020ae90 f i IDT.obj
+ 0001:00009eb0       ?interruptServiceRequestFC@CIDT@@CAXXZ 0020aeb0 f i IDT.obj
+ 0001:00009ed0       ?interruptServiceRequestFD@CIDT@@CAXXZ 0020aed0 f i IDT.obj
+ 0001:00009ef0       ?interruptServiceRequestFE@CIDT@@CAXXZ 0020aef0 f i IDT.obj
+ 0001:00009f10       ?interruptServiceRequestFF@CIDT@@CAXXZ 0020af10 f i IDT.obj
+ 0001:00009f30       ??0CIOManager@@QAE@XZ      0020af30 f   IOManager.obj
+ 0001:00009f51       ??1CIOManager@@UAE@XZ      0020af51 f   IOManager.obj
+ 0001:00009f65       ?create@CIOManager@@QAE?BKXZ 0020af65 f   IOManager.obj
+ 0001:00009fe9       ?releasePort@CIOManager@@QAEPBVCIOPort@@PBV2@@Z 0020afe9 f   IOManager.obj
+ 0001:0000a11e       ?requestPort@CIOManager@@QAEPBVCIOPort@@G@Z 0020b11e f   IOManager.obj
+ 0001:0000a4f0       ??_GCIOManager@@UAEPAXI@Z  0020b4f0 f i IOManager.obj
+ 0001:0000a4f0       ??_ECIOManager@@UAEPAXI@Z  0020b4f0 f i IOManager.obj
+ 0001:0000a520       ??_E?$TCollection@PBVCIOPort@@@@UAEPAXI@Z 0020b520 f i IOManager.obj
+ 0001:0000a520       ??_G?$TCollection@PBVCIOPort@@@@UAEPAXI@Z 0020b520 f i IOManager.obj
+ 0001:0000a550       ??_G?$TList@PBVCIOPort@@@@UAEPAXI@Z 0020b550 f i IOManager.obj
+ 0001:0000a550       ??_E?$TList@PBVCIOPort@@@@UAEPAXI@Z 0020b550 f i IOManager.obj
+ 0001:0000a690       ??0CIOPort@@QAE@G@Z        0020b690 f   IOPort.obj
+ 0001:0000a6aa       ??1CIOPort@@QAE@XZ         0020b6aa f   IOPort.obj
+ 0001:0000a6b5       ?getAddress@CIOPort@@QBE?BGXZ 0020b6b5 f   IOPort.obj
+ 0001:0000a6c6       ?readByte@CIOPort@@QBE?BEXZ 0020b6c6 f   IOPort.obj
+ 0001:0000a6ee       ?writeByte@CIOPort@@QBEXE@Z 0020b6ee f   IOPort.obj
+ 0001:0000a720       ??0CLDT@@QAE@PAXG@Z        0020b720 f   ldt.obj
+ 0001:0000a753       ??1CLDT@@UAE@XZ            0020b753 f   ldt.obj
+ 0001:0000a76f       ?getLDTSelector@CLDT@@QAEGXZ 0020b76f f   ldt.obj
+ 0001:0000a781       ?setLDTSelector@CLDT@@QAEXG@Z 0020b781 f   ldt.obj
+ 0001:0000a7a0       ??_GCLDT@@UAEPAXI@Z        0020b7a0 f i ldt.obj
+ 0001:0000a7a0       ??_ECLDT@@UAEPAXI@Z        0020b7a0 f i ldt.obj
+ 0001:0000a7d0       _main                      0020b7d0 f   main.obj
+ 0001:0000a810       ??0CPageDirectoryEntry@@QAE@XZ 0020b810 f   PageDirectoryEntry.obj
+ 0001:0000a81e       ??1CPageDirectoryEntry@@QAE@XZ 0020b81e f   PageDirectoryEntry.obj
+ 0001:0000a829       ?getPageTable@CPageDirectoryEntry@@QAEKXZ 0020b829 f   PageDirectoryEntry.obj
+ 0001:0000a841       ?getPageTablePointer@CPageDirectoryEntry@@QAEPAVCPageTableEntry@@XZ 0020b841 f   PageDirectoryEntry.obj
+ 0001:0000a85c       ?getAllocated@CPageDirectoryEntry@@QAE_NXZ 0020b85c f   PageDirectoryEntry.obj
+ 0001:0000a87a       ?getFull@CPageDirectoryEntry@@QAE_NXZ 0020b87a f   PageDirectoryEntry.obj
+ 0001:0000a898       ?setPresent@CPageDirectoryEntry@@QAEX_N@Z 0020b898 f   PageDirectoryEntry.obj
+ 0001:0000a8ce       ?setReadWrite@CPageDirectoryEntry@@QAEX_N@Z 0020b8ce f   PageDirectoryEntry.obj
+ 0001:0000a904       ?setUserSupervisor@CPageDirectoryEntry@@QAEX_N@Z 0020b904 f   PageDirectoryEntry.obj
+ 0001:0000a93a       ?setWriteThrough@CPageDirectoryEntry@@QAEX_N@Z 0020b93a f   PageDirectoryEntry.obj
+ 0001:0000a970       ?setCacheDisabled@CPageDirectoryEntry@@QAEX_N@Z 0020b970 f   PageDirectoryEntry.obj
+ 0001:0000a9a6       ?setAccessed@CPageDirectoryEntry@@QAEX_N@Z 0020b9a6 f   PageDirectoryEntry.obj
+ 0001:0000a9dc       ?setReserved@CPageDirectoryEntry@@QAEX_N@Z 0020b9dc f   PageDirectoryEntry.obj
+ 0001:0000aa12       ?setPageSize@CPageDirectoryEntry@@QAEX_N@Z 0020ba12 f   PageDirectoryEntry.obj
+ 0001:0000aa48       ?setGlobalPage@CPageDirectoryEntry@@QAEX_N@Z 0020ba48 f   PageDirectoryEntry.obj
+ 0001:0000aa7e       ?setAllocated@CPageDirectoryEntry@@QAEX_N@Z 0020ba7e f   PageDirectoryEntry.obj
+ 0001:0000aab4       ?setFull@CPageDirectoryEntry@@QAEX_N@Z 0020bab4 f   PageDirectoryEntry.obj
+ 0001:0000aaea       ?setAvailable@CPageDirectoryEntry@@QAEX_N@Z 0020baea f   PageDirectoryEntry.obj
+ 0001:0000ab20       ?setPageTable@CPageDirectoryEntry@@QAEXK@Z 0020bb20 f   PageDirectoryEntry.obj
+ 0001:0000ab50       ??0CPageTableEntry@@QAE@XZ 0020bb50 f   PageTableEntry.obj
+ 0001:0000ab5e       ??1CPageTableEntry@@QAE@XZ 0020bb5e f   PageTableEntry.obj
+ 0001:0000ab69       ?clear@CPageTableEntry@@QAEXXZ 0020bb69 f   PageTableEntry.obj
+ 0001:0000ab7d       ?getAllocated@CPageTableEntry@@QAE_NXZ 0020bb7d f   PageTableEntry.obj
+ 0001:0000ab9b       ?getPagePointer@CPageTableEntry@@QBEPAXXZ 0020bb9b f   PageTableEntry.obj
+ 0001:0000abb6       ?getPageFrame@CPageTableEntry@@QBEKXZ 0020bbb6 f   PageTableEntry.obj
+ 0001:0000abce       ?setPageFrame@CPageTableEntry@@QAEXK@Z 0020bbce f   PageTableEntry.obj
+ 0001:0000abf8       ?setAllocated@CPageTableEntry@@QAEX_N@Z 0020bbf8 f   PageTableEntry.obj
+ 0001:0000ac2e       ?setPresent@CPageTableEntry@@QAEX_N@Z 0020bc2e f   PageTableEntry.obj
+ 0001:0000ac64       ?setReadWrite@CPageTableEntry@@QAEX_N@Z 0020bc64 f   PageTableEntry.obj
+ 0001:0000aca0       ??0CPhysicalMemoryManager@@QAE@XZ 0020bca0 f   PhysicalMemoryManager.obj
+ 0001:0000acd9       ??1CPhysicalMemoryManager@@UAE@XZ 0020bcd9 f   PhysicalMemoryManager.obj
+ 0001:0000aced       ?allocate@CPhysicalMemoryManager@@AAEKPAVCPageDirectoryEntry@@I@Z 0020bced f   PhysicalMemoryManager.obj
+ 0001:0000ad61       ?allocatePage@CPhysicalMemoryManager@@AAEKPAVCPageDirectoryEntry@@@Z 0020bd61 f   PhysicalMemoryManager.obj
+ 0001:0000af91       ?allocatePages@CPhysicalMemoryManager@@AAE_NPAVCPageDirectoryEntry@@IUSPlacement@1@@Z 0020bf91 f   PhysicalMemoryManager.obj
+ 0001:0000b0ed       ?allocatePagesFromBaseMemory@CPhysicalMemoryManager@@QAEKK@Z 0020c0ed f   PhysicalMemoryManager.obj
+ 0001:0000b2ef       ?commitMemory@CPhysicalMemoryManager@@QAEKPAVCPageDirectoryEntry@@PBXK@Z 0020c2ef f   PhysicalMemoryManager.obj
+ 0001:0000b567       ?countPages@CPhysicalMemoryManager@@AAEKXZ 0020c567 f   PhysicalMemoryManager.obj
+ 0001:0000b5b8       ?create@CPhysicalMemoryManager@@QAEKXZ 0020c5b8 f   PhysicalMemoryManager.obj
+ 0001:0000b7d4       ?firstClearBit@CPhysicalMemoryManager@@AAEEK@Z 0020c7d4 f   PhysicalMemoryManager.obj
+ 0001:0000b882       ?firstClearBitInByte@CPhysicalMemoryManager@@AAEEE@Z 0020c882 f   PhysicalMemoryManager.obj
+ 0001:0000b8d6       ?freePages@CPhysicalMemoryManager@@QAEXKK@Z 0020c8d6 f   PhysicalMemoryManager.obj
+ 0001:0000ba39       ?getPageDirectory@CPhysicalMemoryManager@@AAEPAVCPageDirectoryEntry@@XZ 0020ca39 f   PhysicalMemoryManager.obj
+ 0001:0000ba64       ?getBytesPerPage@CPhysicalMemoryManager@@QBEKXZ 0020ca64 f   PhysicalMemoryManager.obj
+ 0001:0000ba74       ?getPageTable@CPhysicalMemoryManager@@AAEPAVCPageTableEntry@@PAVCPageDirectoryEntry@@K@Z 0020ca74 f   PhysicalMemoryManager.obj
+ 0001:0000ba92       ?getPageTableEntry@CPhysicalMemoryManager@@AAEPAVCPageTableEntry@@PAVCPageDirectoryEntry@@K@Z 0020ca92 f   PhysicalMemoryManager.obj
+ 0001:0000bbe8       ?placeBlockInPageTable@CPhysicalMemoryManager@@AAE?AUSPlacement@1@PAVCPageDirectoryEntry@@IIU21@@Z 0020cbe8 f   PhysicalMemoryManager.obj
+ 0001:0000bd3a       ?createPageDirectory@CPhysicalMemoryManager@@QAEPAVCPageDirectoryEntry@@XZ 0020cd3a f   PhysicalMemoryManager.obj
+ 0001:0000bdb9       ?createPageTable@CPhysicalMemoryManager@@AAEPAVCPageTableEntry@@PAVCPageDirectoryEntry@@G@Z 0020cdb9 f   PhysicalMemoryManager.obj
+ 0001:0000be14       ?mapGlobalPages@CPhysicalMemoryManager@@QAEXPAVCPageDirectoryEntry@@@Z 0020ce14 f   PhysicalMemoryManager.obj
+ 0001:0000be36       ?mapPage@CPhysicalMemoryManager@@AAEXPAVCPageDirectoryEntry@@KK@Z 0020ce36 f   PhysicalMemoryManager.obj
+ 0001:0000bf72       ?mapPages@CPhysicalMemoryManager@@AAEXPAVCPageDirectoryEntry@@KKK@Z 0020cf72 f   PhysicalMemoryManager.obj
+ 0001:0000bfc4       ?placeBlockInPageDirectory@CPhysicalMemoryManager@@AAE?AUSPlacement@1@PAVCPageDirectoryEntry@@I@Z 0020cfc4 f   PhysicalMemoryManager.obj
+ 0001:0000c174       ?OLD_setBit@CPhysicalMemoryManager@@AAEKKE@Z 0020d174 f   PhysicalMemoryManager.obj
+ 0001:0000c19c       ?setDebug@CPhysicalMemoryManager@@QAEX_N@Z 0020d19c f   PhysicalMemoryManager.obj
+ 0001:0000c1b2       ?setDebugBreak@CPhysicalMemoryManager@@QAEX_N@Z 0020d1b2 f   PhysicalMemoryManager.obj
+ 0001:0000c1c8       ?virtualToPhysical@CPhysicalMemoryManager@@QBEPAXPAVCPageDirectoryEntry@@PBX@Z 0020d1c8 f   PhysicalMemoryManager.obj
+ 0001:0000c370       ??_ECPhysicalMemoryManager@@UAEPAXI@Z 0020d370 f i PhysicalMemoryManager.obj
+ 0001:0000c370       ??_GCPhysicalMemoryManager@@UAEPAXI@Z 0020d370 f i PhysicalMemoryManager.obj
+ 0001:0000c3a0       ??0CPIC@@QAE@XZ            0020d3a0 f   PIC.obj
+ 0001:0000c3b7       ??1CPIC@@UAE@XZ            0020d3b7 f   PIC.obj
+ 0001:0000c45f       ?create@CPIC@@QAE?BJXZ     0020d45f f   PIC.obj
+ 0001:0000c5bd       ?restart@CPIC@@AAEXPBVCIOPort@@0_NEE@Z 0020d5bd f   PIC.obj
+ 0001:0000c61b       ?irqToInt@CPIC@@QBE?BEE@Z  0020d61b f   PIC.obj
+ 0001:0000c651       ?endOfInterrupt@CPIC@@QBEXXZ 0020d651 f   PIC.obj
+ 0001:0000c670       ??_GCPIC@@UAEPAXI@Z        0020d670 f i PIC.obj
+ 0001:0000c670       ??_ECPIC@@UAEPAXI@Z        0020d670 f i PIC.obj
+ 0001:0000c6a0       ?getEntryPoint@CPortableExecutable@@QAEPAXXZ 0020d6a0 f   PortableExecutable.obj
+ 0001:0000c6c2       ?getFirstSectionHeader@CPortableExecutable@@AAEPAVCSectionHeader@1@XZ 0020d6c2 f   PortableExecutable.obj
+ 0001:0000c6d3       ?getNextSectionHeader@CPortableExecutable@@AAEPAVCSectionHeader@1@PAV21@@Z 0020d6d3 f   PortableExecutable.obj
+ 0001:0000c763       ?getRelocationTable@CPortableExecutable@@ABEPAXPAVCSectionHeader@1@@Z 0020d763 f   PortableExecutable.obj
+ 0001:0000c793       ?getSectionHeader@CPortableExecutable@@AAEPAVCSectionHeader@1@PBD@Z 0020d793 f   PortableExecutable.obj
+ 0001:0000c7ea       ?initialise@CPortableExecutable@@QAE_NPAVCProcess@@PAX@Z 0020d7ea f   PortableExecutable.obj
+ 0001:0000c9e3       ?mapImage@CPortableExecutable@@AAEPAXPAVCProcess@@@Z 0020d9e3 f   PortableExecutable.obj
+ 0001:0000cadd       ?relocateSections@CPortableExecutable@@AAE_NPAVCProcess@@@Z 0020dadd f   PortableExecutable.obj
+ 0001:0000cb40       ?relocate@CSectionHeader@CPortableExecutable@@QAE_NPAVCProcess@@PAVCMZHeader@@PAVCOptionalHeader@2@_N@Z 0020db40 f   PortableExecutable.obj
+ 0001:0000cd00       ??0CProcess@@QAE@AAVCThreadManager@@@Z 0020dd00 f   Process.obj
+ 0001:0000cd51       ??1CProcess@@QAE@XZ        0020dd51 f   Process.obj
+ 0001:0000cd5c       ?allocateMemory@CProcess@@QAEPAXPBXKW4EAllocationType@@W4EMemoryType@@@Z 0020dd5c f   Process.obj
+ 0001:0000cdb8       ?create@CProcess@@QAE_NXZ  0020ddb8 f   Process.obj
+ 0001:0000cf6c       ?createThread@CProcess@@QAEPAVCThread@@P6AXXZ@Z 0020df6c f   Process.obj
+ 0001:0000d047       ?getCodeSelector@CProcess@@QAEGXZ 0020e047 f   Process.obj
+ 0001:0000d059       ?getDataSelector@CProcess@@QAEGXZ 0020e059 f   Process.obj
+ 0001:0000d06b       ?getLDT@CProcess@@QAEPAVCLDT@@XZ 0020e06b f   Process.obj
+ 0001:0000d07c       ?getLDTDescriptor@CProcess@@QAEPAVCDescriptor@@XZ 0020e07c f   Process.obj
+ 0001:0000d0ba       ?getStackSelector@CProcess@@QAEGXZ 0020e0ba f   Process.obj
+ 0001:0000d0cc       ?setCodeSelector@CProcess@@AAEXG@Z 0020e0cc f   Process.obj
+ 0001:0000d0e4       ?setDataSelector@CProcess@@AAEXG@Z 0020e0e4 f   Process.obj
+ 0001:0000d0fc       ?getPageDirectoryTable@CProcess@@QBEPAVCPageDirectoryEntry@@XZ 0020e0fc f   Process.obj
+ 0001:0000d10d       ?getPhysicalAddress@CProcess@@QAEPAXPBX@Z 0020e10d f   Process.obj
+ 0001:0000d13f       ?setPageDirectoryTable@CProcess@@AAEXPAVCPageDirectoryEntry@@@Z 0020e13f f   Process.obj
+ 0001:0000d1a0       ??0CProcessManager@@QAE@XZ 0020e1a0 f   ProcessManager.obj
+ 0001:0000d1cb       ??1CProcessManager@@QAE@XZ 0020e1cb f   ProcessManager.obj
+ 0001:0000d1d6       ?create@CProcessManager@@QAE_NXZ 0020e1d6 f   ProcessManager.obj
+ 0001:0000d2c1       ?createProcess@CProcessManager@@QAEPAVCProcess@@XZ 0020e2c1 f   ProcessManager.obj
+ 0001:0000d4f2       ?getCurrentProcess@CProcessManager@@QAEPAVCProcess@@XZ 0020e4f2 f   ProcessManager.obj
+ 0001:0000d4ff       ?getThreadManager@CProcessManager@@AAEAAVCThreadManager@@XZ 0020e4ff f   ProcessManager.obj
+ 0001:0000d50f       ?run@CProcessManager@@QAEXXZ 0020e50f f   ProcessManager.obj
+ 0001:0000d524       ?setKernelProcess@CProcessManager@@AAEXPAVCProcess@@@Z 0020e524 f   ProcessManager.obj
+ 0001:0000d560       ??_E?$TCollection@PAVCProcess@@@@UAEPAXI@Z 0020e560 f i ProcessManager.obj
+ 0001:0000d560       ??_G?$TCollection@PAVCProcess@@@@UAEPAXI@Z 0020e560 f i ProcessManager.obj
+ 0001:0000d590       ??_G?$TList@PAVCProcess@@@@UAEPAXI@Z 0020e590 f i ProcessManager.obj
+ 0001:0000d590       ??_E?$TList@PAVCProcess@@@@UAEPAXI@Z 0020e590 f i ProcessManager.obj
+ 0001:0000d6d0       ??0CSelector@@QAE@G@Z      0020e6d0 f   Selector.obj
+ 0001:0000d76c       ??1CSelector@@QAE@XZ       0020e76c f   Selector.obj
+ 0001:0000d777       ?dump@CSelector@@QAEXXZ    0020e777 f   Selector.obj
+ 0001:0000d8b3       ?getDescriptorTableScope@CSelector@@QAE?AW4EDescriptorTableScope@@XZ 0020e8b3 f   Selector.obj
+ 0001:0000d900       ??0CSystem@@QAE@XZ         0020e900 f   System.obj
+ 0001:0000d93d       ??1CSystem@@UAE@XZ         0020e93d f   System.obj
+ 0001:0000d95c       ?create@CSystem@@QAE?BJXZ  0020e95c f   System.obj
+ 0001:0000db15       ?getIOManager@CSystem@@QAEAAVCIOManager@@XZ 0020eb15 f   System.obj
+ 0001:0000db26       ?getPhysicalMemoryManager@CSystem@@QAEAAVCPhysicalMemoryManager@@XZ 0020eb26 f   System.obj
+ 0001:0000db37       ?getPIC@CSystem@@QAEAAVCPIC@@XZ 0020eb37 f   System.obj
+ 0001:0000db48       ?getCPU@CSystem@@QAEAAVCCPU@@XZ 0020eb48 f   System.obj
+ 0001:0000db59       ?getDMAManager@CSystem@@QAEAAVCDMAManager@@XZ 0020eb59 f   System.obj
+ 0001:0000db6a       ?getFloppyDiskController@CSystem@@QAEAAVCFloppyDiskController@@XZ 0020eb6a f   System.obj
+ 0001:0000db7b       ?getTimer@CSystem@@QAEAAVCTimer@@XZ 0020eb7b f   System.obj
+ 0001:0000db90       ??_GCSystem@@UAEPAXI@Z     0020eb90 f i System.obj
+ 0001:0000db90       ??_ECSystem@@UAEPAXI@Z     0020eb90 f i System.obj
+ 0001:0000dbc0       ??0CTaskStateSegment@@QAE@XZ 0020ebc0 f   TaskStateSegment.obj
+ 0001:0000dbce       ??1CTaskStateSegment@@QAE@XZ 0020ebce f   TaskStateSegment.obj
+ 0001:0000dbd9       ?getCR3@CTaskStateSegment@@QAEPAVCPageDirectoryEntry@@XZ 0020ebd9 f   TaskStateSegment.obj
+ 0001:0000dbea       ?setCR3@CTaskStateSegment@@QAEXPAVCPageDirectoryEntry@@@Z 0020ebea f   TaskStateSegment.obj
+ 0001:0000dc00       ?setCurrentStackPointer@CTaskStateSegment@@QAEXGPAX@Z 0020ec00 f   TaskStateSegment.obj
+ 0001:0000dc21       ?setDataSelector@CTaskStateSegment@@QAEXG@Z 0020ec21 f   TaskStateSegment.obj
+ 0001:0000dc39       ?setInstructionPointer@CTaskStateSegment@@QAEXGPAX@Z 0020ec39 f   TaskStateSegment.obj
+ 0001:0000dc5a       ?setLDTSelector@CTaskStateSegment@@QAEXG@Z 0020ec5a f   TaskStateSegment.obj
+ 0001:0000dc72       ?setLink@CTaskStateSegment@@QAEXG@Z 0020ec72 f   TaskStateSegment.obj
+ 0001:0000dc89       ?setPageDirectoryTable@CTaskStateSegment@@QAEXPAVCPageDirectoryEntry@@@Z 0020ec89 f   TaskStateSegment.obj
+ 0001:0000dc9f       ?setRing0StackPointer@CTaskStateSegment@@QAEXGPAX@Z 0020ec9f f   TaskStateSegment.obj
+ 0001:0000dcc0       ?setRing1StackPointer@CTaskStateSegment@@QAEXGPAX@Z 0020ecc0 f   TaskStateSegment.obj
+ 0001:0000dce1       ?setRing2StackPointer@CTaskStateSegment@@QAEXGPAX@Z 0020ece1 f   TaskStateSegment.obj
+ 0001:0000dd10       ??0CThread@@QAE@XZ         0020ed10 f   Thread.obj
+ 0001:0000dd3a       ??1CThread@@QAE@XZ         0020ed3a f   Thread.obj
+ 0001:0000dd4d       ?create@CThread@@QAE_NPAVCProcess@@P6AXXZ@Z 0020ed4d f   Thread.obj
+ 0001:0000de80       ?getTSSDescriptor@CThread@@QAEPAVCDescriptor@@XZ 0020ee80 f   Thread.obj
+ 0001:0000dec6       ?getTSSSelector@CThread@@QAEGXZ 0020eec6 f   Thread.obj
+ 0001:0000ded8       ?setBusy@CThread@@QAEX_N@Z 0020eed8 f   Thread.obj
+ 0001:0000df70       ?setReturnThread@CThread@@QAEXPAV1@@Z 0020ef70 f   Thread.obj
+ 0001:0000dfe3       ?setState@CThread@@QAEXW4EThreadStatus@@@Z 0020efe3 f   Thread.obj
+ 0001:0000e002       ?setTSSSelector@CThread@@AAEXG@Z 0020f002 f   Thread.obj
+ 0001:0000e0b0       ??0CThreadManager@@QAE@XZ  0020f0b0 f   ThreadManager.obj
+ 0001:0000e0d1       ??1CThreadManager@@QAE@XZ  0020f0d1 f   ThreadManager.obj
+ 0001:0000e0dc       ?create@CThreadManager@@QAE_NXZ 0020f0dc f   ThreadManager.obj
+ 0001:0000e156       ?createThread@CThreadManager@@QAEPAVCThread@@PAVCProcess@@P6AXXZ@Z 0020f156 f   ThreadManager.obj
+ 0001:0000e2b6       ?createThreadCursor@CThreadManager@@AAEXXZ 0020f2b6 f   ThreadManager.obj
+ 0001:0000e501       ?getCurrentThread@CThreadManager@@SAPAVCThread@@XZ 0020f501 f   ThreadManager.obj
+ 0001:0000e53f       ?getMainThread@CThreadManager@@CAPAVCThread@@XZ 0020f53f f   ThreadManager.obj
+ 0001:0000e57d       ?getMultiTaskingEnabled@CThreadManager@@CA_NXZ 0020f57d f   ThreadManager.obj
+ 0001:0000e587       ?getNextThread@CThreadManager@@CAPAVCThread@@XZ 0020f587 f   ThreadManager.obj
+ 0001:0000e7e4       ?hookTimer@CThreadManager@@AAEXXZ 0020f7e4 f   ThreadManager.obj
+ 0001:0000e845       ?resumeThread@CThreadManager@@CAXPAVCThread@@@Z 0020f845 f   ThreadManager.obj
+ 0001:0000e91d       ?run@CThreadManager@@QAEXXZ 0020f91d f   ThreadManager.obj
+ 0001:0000e9f6       ?setCurrentThread@CThreadManager@@AAEXPAVCThread@@@Z 0020f9f6 f   ThreadManager.obj
+ 0001:0000ea61       ?setKernelThread@CThreadManager@@QAEXPAVCThread@@@Z 0020fa61 f   ThreadManager.obj
+ 0001:0000ead8       ?timerISRHandler@CThreadManager@@CAXXZ 0020fad8 f   ThreadManager.obj
+ 0001:0000eb10       ?last@?$TList@PAVCProcess@@@@UBEPBVCNode@?$TCollection@PAVCProcess@@@@XZ 0020fb10 f i ThreadManager.obj
+ 0001:0000eb10       ?last@?$TList@PAVCDriveUnit@@@@UBEPBVCNode@?$TCollection@PAVCDriveUnit@@@@XZ 0020fb10 f i ThreadManager.obj
+ 0001:0000eb10       ?last@?$TList@PAVCDMAController@@@@UBEPBVCNode@?$TCollection@PAVCDMAController@@@@XZ 0020fb10 f i ThreadManager.obj
+ 0001:0000eb10       ?last@?$TList@PBVCIOPort@@@@UBEPBVCNode@?$TCollection@PBVCIOPort@@@@XZ 0020fb10 f i ThreadManager.obj
+ 0001:0000eb10       ?last@?$TList@PAVCDMAChannel@@@@UBEPBVCNode@?$TCollection@PAVCDMAChannel@@@@XZ 0020fb10 f i ThreadManager.obj
+ 0001:0000eb10       ?last@?$TList@PAVCThread@@@@UBEPBVCNode@?$TCollection@PAVCThread@@@@XZ 0020fb10 f i ThreadManager.obj
+ 0001:0000eb10       ?last@?$TList@PAVCBootController@@@@UBEPBVCNode@?$TCollection@PAVCBootController@@@@XZ 0020fb10 f i ThreadManager.obj
+ 0001:0000eb30       ??_E?$TCollection@PAVCThread@@@@UAEPAXI@Z 0020fb30 f i ThreadManager.obj
+ 0001:0000eb30       ??_G?$TCollection@PAVCThread@@@@UAEPAXI@Z 0020fb30 f i ThreadManager.obj
+ 0001:0000eb60       ??_E?$TList@PAVCThread@@@@UAEPAXI@Z 0020fb60 f i ThreadManager.obj
+ 0001:0000eb60       ??_G?$TList@PAVCThread@@@@UAEPAXI@Z 0020fb60 f i ThreadManager.obj
+ 0001:0000eca0       ??0CTimer@@QAE@XZ          0020fca0 f   Timer.obj
+ 0001:0000ecd2       ??1CTimer@@UAE@XZ          0020fcd2 f   Timer.obj
+ 0001:0000ed50       ?getIRQ@CTimer@@QBE?BEXZ   0020fd50 f   Timer.obj
+ 0001:0000ed61       ?create@CTimer@@QAE_NXZ    0020fd61 f   Timer.obj
+ 0001:0000eebd       ?interruptServiceRequest@CTimer@@CAXXZ 0020febd f   Timer.obj
+ 0001:0000eee7       ?programOscillator@CTimer@@AAEXEEG@Z 0020fee7 f   Timer.obj
+ 0001:0000efa4       ?delayExecution@CTimer@@QBEXK@Z 0020ffa4 f   Timer.obj
+ 0001:0000efd0       ??_ECTimer@@UAEPAXI@Z      0020ffd0 f i Timer.obj
+ 0001:0000efd0       ??_GCTimer@@UAEPAXI@Z      0020ffd0 f i Timer.obj
+ 0001:0000f000       _atexit                    00210000 f   libcpp:crt0.obj
+ 0001:0000f020       _NtProcessStartup          00210020 f   libcpp:crt0.obj
+ 0001:0000f040       ??3@YAXPAX@Z               00210040 f   libcpp:delete.obj
+ 0001:0000f060       ??0ostream@@QAE@XZ         00210060 f   libcpp:ostream.obj
+ 0001:0000f080       ??_Eostream@@UAEPAXI@Z     00210080 f i libcpp:ostream.obj
+ 0001:0000f080       ??_Gostream@@UAEPAXI@Z     00210080 f i libcpp:ostream.obj
+ 0001:0000f0c0       ??1ostream@@UAE@XZ         002100c0 f   libcpp:ostream.obj
+ 0001:0000f0e0       ??6ostream@@QAEAAV0@P6AAAV0@AAV0@@Z@Z 002100e0 f   libcpp:ostream.obj
+ 0001:0000f100       ??6ostream@@QAEAAV0@E@Z    00210100 f   libcpp:ostream.obj
+ 0001:0000f130       ??6ostream@@QAEAAV0@G@Z    00210130 f   libcpp:ostream.obj
+ 0001:0000f160       ??6ostream@@QAEAAV0@D@Z    00210160 f   libcpp:ostream.obj
+ 0001:0000f190       ??6ostream@@QAEAAV0@J@Z    00210190 f   libcpp:ostream.obj
+ 0001:0000f190       ??6ostream@@QAEAAV0@K@Z    00210190 f   libcpp:ostream.obj
+ 0001:0000f1c0       ??6ostream@@QAEAAV0@PBD@Z  002101c0 f   libcpp:ostream.obj
+ 0001:0000f1f0       ?Output@ostream@@EAEAAV1@D@Z 002101f0 f   libcpp:ostream.obj
+ 0001:0000f1f0       ?Output@ostream@@EAEAAV1@PBD@Z 002101f0 f   libcpp:ostream.obj
+ 0001:0000f1f0       ?Output@ostream@@EAEAAV1@K@Z 002101f0 f   libcpp:ostream.obj
+ 0001:0000f1f0       ?Output@ostream@@EAEAAV1@E@Z 002101f0 f   libcpp:ostream.obj
+ 0001:0000f1f0       ?Output@ostream@@EAEAAV1@G@Z 002101f0 f   libcpp:ostream.obj
+ 0001:0000f290       ??0ostream_withassign@@QAE@XZ 00210290 f   libcpp:ostream_withassign.obj
+ 0001:0000f2f0       ??_Eostream_withassign@@UAEPAXI@Z 002102f0 f i libcpp:ostream_withassign.obj
+ 0001:0000f2f0       ??_Gostream_withassign@@UAEPAXI@Z 002102f0 f i libcpp:ostream_withassign.obj
+ 0001:0000f330       ??1ostream_withassign@@UAE@XZ 00210330 f   libcpp:ostream_withassign.obj
+ 0001:0000f360       ?flush@ostream@@UAEAAV1@XZ 00210360 f   libcpp:ostream_withassign.obj
+ 0001:0000f360       ?flush@ostream_withassign@@UAEAAVostream@@XZ 00210360 f   libcpp:ostream_withassign.obj
+ 0001:0000f380       ?Output@ostream_withassign@@EAEAAVostream@@PBD@Z 00210380 f   libcpp:ostream_withassign.obj
+ 0001:0000f3c0       ?Output@ostream_withassign@@EAEAAVostream@@E@Z 002103c0 f   libcpp:ostream_withassign.obj
+ 0001:0000f410       ?Output@ostream_withassign@@EAEAAVostream@@G@Z 00210410 f   libcpp:ostream_withassign.obj
+ 0001:0000f450       ?Output@ostream_withassign@@EAEAAVostream@@K@Z 00210450 f   libcpp:ostream_withassign.obj
+ 0001:0000f4b0       ?Output@ostream_withassign@@EAEAAVostream@@D@Z 002104b0 f   libcpp:ostream_withassign.obj
+ 0001:0000f4e0       ?PrintChar@ostream_withassign@@AAEXD@Z 002104e0 f   libcpp:ostream_withassign.obj
+ 0001:0000f660       ??2@YAPAXI@Z               00210660 f   libcpp:NEW.OBJ
+ 0001:0000f680       __purecall                 00210680 f   libcpp:purevirt.obj
+ 0001:0000f6b0       _memset                    002106b0 f   libcpp:MEMSET.OBJ
+ 0001:0000f710       _memcpy                    00210710 f   libcpp:MEMCPY.OBJ
+ 0001:0000fa50       _strncmp                   00210a50 f   libcpp:STRNCMP.OBJ
+ 0001:0000fa90       _strlen                    00210a90 f   libcpp:STRLEN.OBJ
+ 0001:0000fb90       ?free@@YAPAXPAX@Z          00210b90 f   libcpp:malloc.obj
+ 0001:0000fbb0       ?malloc@@YAPAXI@Z          00210bb0 f   libcpp:malloc.obj
+ 0001:0000fbd0       ??0CHeap@@QAE@PAX@Z        00210bd0 f   libcpp:Heap.obj
+ 0001:0000fc30       ??1CHeap@@QAE@XZ           00210c30 f   libcpp:Heap.obj
+ 0001:0000fc50       ?free@CHeap@@QAEPAXPAX@Z   00210c50 f   libcpp:Heap.obj
+ 0001:0000fcc0       ?allocate@CHeap@@QAEPAXK@Z 00210cc0 f   libcpp:Heap.obj
+ 0001:0000fdc0       ?granulate@CHeap@@AAEII@Z  00210dc0 f   libcpp:Heap.obj
+ 0002:00000000       ?m_pClassName@CApplication@@0QBDB 00211000     Application.obj
+ 0002:00000010       ??_7CApplication@@6B@      00211010     Application.obj
+ 0002:00000014       ??_7CBootController@@6B@   00211014     BootController.obj
+ 0002:0000001c       ??_7CBootDevice@@6B@       0021101c     BootDevice.obj
+ 0002:0000002c       ?m_pClassName@CBootManager@@0QBDB 0021102c     BootManager.obj
+ 0002:0000003c       ??_7CBootManager@@6B@      0021103c     BootManager.obj
+ 0002:00000040       ?m_bDebug@?$TCursor@PAVCBootController@@@@0_NB 00211040     BootManager.obj
+ 0002:00000044       ??_7?$TList@PAVCBootController@@@@6B@ 00211044     BootManager.obj
+ 0002:00000054       ??_7?$TCollection@PAVCBootController@@@@6B@ 00211054     BootManager.obj
+ 0002:00000064       ?m_pClassName@CCPU@@0QBDB  00211064     CPU.obj
+ 0002:0000006c       ??_7CCPU@@6B@              0021106c     CPU.obj
+ 0002:00000070       ?m_pClassName@CDescriptor@@0QBDB 00211070     Descriptor.obj
+ 0002:0000007d       ?m_bDebug@CDescriptor@@0_NB 0021107d     Descriptor.obj
+ 0002:00000080       ?m_pClassName@CDescriptorTable@@0QBDB 00211080     DescriptorTable.obj
+ 0002:00000092       ?m_bDebug@CDescriptorTable@@0_NB 00211092     DescriptorTable.obj
+ 0002:00000094       ??_7CDescriptorTable@@6B@  00211094     DescriptorTable.obj
+ 0002:00000098       ?m_pClassName@CDMAChannel@@0QBDB 00211098     DMAChannel.obj
+ 0002:000000a8       ??_7CDMAChannel@@6B@       002110a8     DMAChannel.obj
+ 0002:000000ac       ?m_pClassName@CDMAController@@0QBDB 002110ac     DMAController.obj
+ 0002:000000bc       ?m_bDebug@CDMAController@@0_NB 002110bc     DMAController.obj
+ 0002:000000bd       ?m_bDebugIO@CDMAController@@0_NB 002110bd     DMAController.obj
+ 0002:000000be       ?m_iAddressPortOffset@CDMAController@@0GB 002110be     DMAController.obj
+ 0002:000000c0       ?m_iWordCountPortOffset@CDMAController@@0GB 002110c0     DMAController.obj
+ 0002:000000c2       ?m_iModePortOffset@CDMAController@@0GB 002110c2     DMAController.obj
+ 0002:000000c4       ?m_iClearFlipFlopPortOffset@CDMAController@@0GB 002110c4     DMAController.obj
+ 0002:000000c6       ?m_iStatusPortOffset@CDMAController@@0GB 002110c6     DMAController.obj
+ 0002:000000c8       ?m_iRequestPortOffset@CDMAController@@0GB 002110c8     DMAController.obj
+ 0002:000000ca       ?m_iSingleMaskBitPortOffset@CDMAController@@0GB 002110ca     DMAController.obj
+ 0002:000000cc       ?m_iMasterClearPortOffset@CDMAController@@0GB 002110cc     DMAController.obj
+ 0002:000000ce       ?m_iClearMaskPortOffset@CDMAController@@0GB 002110ce     DMAController.obj
+ 0002:000000d0       ?m_iWriteAllMaskBitsPortOffset@CDMAController@@0GB 002110d0     DMAController.obj
+ 0002:000000d4       ??_7CDMAController@@6B@    002110d4     DMAController.obj
+ 0002:000000d8       ??_7?$TList@PAVCDMAChannel@@@@6B@ 002110d8     DMAController.obj
+ 0002:000000e8       ??_7?$TCollection@PAVCDMAChannel@@@@6B@ 002110e8     DMAController.obj
+ 0002:000000f8       ?m_bDebug@?$TCursor@PAVCDMAChannel@@@@0_NB 002110f8     DMAController.obj
+ 0002:000000fc       ?m_pClassName@CDMAManager@@0QBDB 002110fc     DMAManager.obj
+ 0002:00000109       ?m_bDebug@CDMAManager@@0_NB 00211109     DMAManager.obj
+ 0002:0000010a       ?m_iPortBaseController1@CDMAManager@@0GB 0021110a     DMAManager.obj
+ 0002:0000010c       ?m_iPortBaseController2@CDMAManager@@0GB 0021110c     DMAManager.obj
+ 0002:00000110       ??_7CDMAManager@@6B@       00211110     DMAManager.obj
+ 0002:00000114       ??_7?$TList@PAVCDMAController@@@@6B@ 00211114     DMAManager.obj
+ 0002:00000124       ??_7?$TCollection@PAVCDMAController@@@@6B@ 00211124     DMAManager.obj
+ 0002:00000134       ?m_bDebug@?$TCursor@PAVCDMAController@@@@0_NB 00211134     DMAManager.obj
+ 0002:00000138       ?m_pClassName@CDriveUnit@@0QBDB 00211138     DriveUnit.obj
+ 0002:00000144       ??_7CDriveUnit@@6B@        00211144     DriveUnit.obj
+ 0002:00000154       ?m_pClassName@CFloppyDiskController@@0QBDB 00211154     FloppyDiskController.obj
+ 0002:0000016b       ?m_bDebug@CFloppyDiskController@@0_NB 0021116b     FloppyDiskController.obj
+ 0002:0000016c       ?m_bDebugInit@CFloppyDiskController@@0_NB 0021116c     FloppyDiskController.obj
+ 0002:0000016d       ?m_bDebugIO@CFloppyDiskController@@0_NB 0021116d     FloppyDiskController.obj
+ 0002:0000016e       ?m_bDebugCmd@CFloppyDiskController@@0_NB 0021116e     FloppyDiskController.obj
+ 0002:00000170       ?m_iDigitalOutputRegister@CFloppyDiskController@@0GB 00211170     FloppyDiskController.obj
+ 0002:00000172       ?m_iMainStatusRegister@CFloppyDiskController@@0GB 00211172     FloppyDiskController.obj
+ 0002:00000174       ?m_iDataRegister@CFloppyDiskController@@0GB 00211174     FloppyDiskController.obj
+ 0002:00000176       ?m_iPortRetryAttempts@CFloppyDiskController@@0GB 00211176     FloppyDiskController.obj
+ 0002:00000178       ?m_iDMAChannel@CFloppyDiskController@@0EB 00211178     FloppyDiskController.obj
+ 0002:0000017c       ?MOTOR_OFF_DELAY@CFloppyDiskController@@2KB 0021117c     FloppyDiskController.obj
+ 0002:00000180       ??_7?$TList@PAVCDriveUnit@@@@6B@ 00211180     FloppyDiskController.obj
+ 0002:00000190       ??_7?$TCollection@PAVCDriveUnit@@@@6B@ 00211190     FloppyDiskController.obj
+ 0002:000001a0       ??_7CFloppyDiskController@@6B@ 002111a0     FloppyDiskController.obj
+ 0002:000001a8       ?m_bDebug@?$TCursor@PAVCDriveUnit@@@@0_NB 002111a8     FloppyDiskController.obj
+ 0002:000001ac       ??_7?$TQueue@E@@6B@        002111ac     FloppyDiskController.obj
+ 0002:000001b0       ?m_pTemplateName@?$TQueue@E@@0QBDB 002111b0     FloppyDiskController.obj
+ 0002:000001bc       ?m_bDebug@?$TQueue@E@@0_NB 002111bc     FloppyDiskController.obj
+ 0002:000001c0       ??_7CGDT@@6B@              002111c0     GDT.obj
+ 0002:000001c4       ??_7CIDT@@6B@              002111c4     IDT.obj
+ 0002:000001c8       ?m_bDebug@CIOManager@@0_NB 002111c8     IOManager.obj
+ 0002:000001cc       ??_7CIOManager@@6B@        002111cc     IOManager.obj
+ 0002:000001d0       ??_7?$TList@PBVCIOPort@@@@6B@ 002111d0     IOManager.obj
+ 0002:000001e0       ??_7?$TCollection@PBVCIOPort@@@@6B@ 002111e0     IOManager.obj
+ 0002:000001f0       ?m_bDebug@?$TCursor@PBVCIOPort@@@@0_NB 002111f0     IOManager.obj
+ 0002:000001f4       ??_7CLDT@@6B@              002111f4     ldt.obj
+ 0002:000001f8       ?m_pClassName@CPhysicalMemoryManager@@0QBDB 002111f8     PhysicalMemoryManager.obj
+ 0002:00000210       ?m_bDebugMap@CPhysicalMemoryManager@@0_NB 00211210     PhysicalMemoryManager.obj
+ 0002:00000214       ?m_iPageSize@CPhysicalMemoryManager@@0KB 00211214     PhysicalMemoryManager.obj
+ 0002:00000218       ?m_iEntriesPerPageTable@CPhysicalMemoryManager@@0KB 00211218     PhysicalMemoryManager.obj
+ 0002:0000021c       ?m_iLog2PageSize@CPhysicalMemoryManager@@0KB 0021121c     PhysicalMemoryManager.obj
+ 0002:00000220       ?m_iLog2EntriesPerPageTable@CPhysicalMemoryManager@@0KB 00211220     PhysicalMemoryManager.obj
+ 0002:00000224       ?m_iMaximumNumberOfPages@CPhysicalMemoryManager@@0KB 00211224     PhysicalMemoryManager.obj
+ 0002:00000228       ?m_iReservedPageCount@CPhysicalMemoryManager@@0KB 00211228     PhysicalMemoryManager.obj
+ 0002:0000022c       ?m_iFirstPageOfBaseMemory@CPhysicalMemoryManager@@0KB 0021122c     PhysicalMemoryManager.obj
+ 0002:00000230       ?m_iLastPageOfBaseMemory@CPhysicalMemoryManager@@0KB 00211230     PhysicalMemoryManager.obj
+ 0002:00000234       ??_7CPhysicalMemoryManager@@6B@ 00211234     PhysicalMemoryManager.obj
+ 0002:00000238       ?m_IRQ_BASE_1@CPIC@@0EB    00211238     PIC.obj
+ 0002:00000239       ?m_IRQ_BASE_2@CPIC@@0EB    00211239     PIC.obj
+ 0002:0000023c       ??_7CPIC@@6B@              0021123c     PIC.obj
+ 0002:00000240       ?m_pClassName@CPortableExecutable@@0QBDB 00211240     PortableExecutable.obj
+ 0002:00000255       ?m_bDebug@CPortableExecutable@@0_NB 00211255     PortableExecutable.obj
+ 0002:00000256       ?m_iSignatureMZ@CPortableExecutable@@0GB 00211256     PortableExecutable.obj
+ 0002:00000258       ?m_iSignatureNT@CPortableExecutable@@0KB 00211258     PortableExecutable.obj
+ 0002:0000025c       ?m_pClassName@CSectionHeader@CPortableExecutable@@0QBDB 0021125c     PortableExecutable.obj
+ 0002:0000026c       ?m_pClassName@CProcess@@0QBDB 0021126c     Process.obj
+ 0002:00000278       ?m_pClassName@CProcessManager@@0QBDB 00211278     ProcessManager.obj
+ 0002:0000028c       ??_7?$TList@PAVCProcess@@@@6B@ 0021128c     ProcessManager.obj
+ 0002:0000029c       ??_7?$TCollection@PAVCProcess@@@@6B@ 0021129c     ProcessManager.obj
+ 0002:000002ac       ?m_pClassName@CSelector@@0QBDB 002112ac     Selector.obj
+ 0002:000002b8       ??_7CSystem@@6B@           002112b8     System.obj
+ 0002:000002bc       ?m_pClassName@CThread@@0QBDB 002112bc     Thread.obj
+ 0002:000002c8       ?m_iRing0StackSize@CThread@@0KB 002112c8     Thread.obj
+ 0002:000002cc       ?m_iRing1StackSize@CThread@@0KB 002112cc     Thread.obj
+ 0002:000002d0       ?m_iRing2StackSize@CThread@@0KB 002112d0     Thread.obj
+ 0002:000002d4       ?m_iRing3StackSize@CThread@@0KB 002112d4     Thread.obj
+ 0002:000002d8       ?m_pClassName@CThreadManager@@0QBDB 002112d8     ThreadManager.obj
+ 0002:000002e8       ??_7?$TList@PAVCThread@@@@6B@ 002112e8     ThreadManager.obj
+ 0002:000002f8       ??_7?$TCollection@PAVCThread@@@@6B@ 002112f8     ThreadManager.obj
+ 0002:00000308       ?m_bDebug@?$TCursor@PAVCThread@@@@0_NB 00211308     ThreadManager.obj
+ 0002:0000030c       ?OSCILLATOR_FREQUENCY@CTimer@@0HB 0021130c     Timer.obj
+ 0002:00000310       ?CHANNEL0_LATCH@CTimer@@0HB 00211310     Timer.obj
+ 0002:00000314       ?CHANNEL1_LATCH@CTimer@@0HB 00211314     Timer.obj
+ 0002:00000318       ?CHANNEL2_LATCH@CTimer@@0HB 00211318     Timer.obj
+ 0002:0000031c       ?COMMAND_REGISTER@CTimer@@0HB 0021131c     Timer.obj
+ 0002:00000320       ??_7CTimer@@6B@            00211320     Timer.obj
+ 0002:00000324       ??_7ostream@@6B@           00211324     libcpp:ostream.obj
+ 0002:00000354       ??_7ostream_withassign@@6B@ 00211354     libcpp:ostream_withassign.obj
+ 0002:00000370       ??_C@_0BP@FDPM@?6Pure?5virtual?5function?5called?4?$AA@ 00211370     libcpp:purevirt.obj
+ 0003:00000000       ?g_pBaseAddress@@3PBEB     00212000     Application.obj
+ 0003:0000008c       ?m_pVirtualLoadAddress@CBootManager@@0PBXB 0021208c     BootManager.obj
+ 0003:00000134       ??_C@_0CI@GHFM@TCursor?$DMItemType?$DO?3?3more?5?9?5Curren@ 00212134     BootManager.obj
+ 0003:0000015c       ??_C@_0CF@PELF@TCursor?$DMItemType?$DO?3?3next?5?9?5Next?5a@ 0021215c     BootManager.obj
+ 0003:00000184       ??_C@_0CI@JNKO@TCursor?$DMItemType?$DO?3?3next?5?9?5Curren@ 00212184     BootManager.obj
+ 0003:000001ac       ??_C@_0CJ@CIEN@TCursor?$DMItemType?$DO?3?3first?5?9?5Curre@ 002121ac     BootManager.obj
+ 0003:000001d8       ??_C@_0CH@NOOL@TCursor?$DMItemType?$DO?3?3first?5?9?5First@ 002121d8     BootManager.obj
+ 0003:00000200       ??_C@_0CL@DFCL@TCursor?$DMItemType?$DO?3?3TCursor?5?9?5Cur@ 00212200     BootManager.obj
+ 0003:0000022c       ??_C@_0CI@EMJK@TCursor?$DMItemType?$DO?3?3TCursor?5?9?5Las@ 0021222c     BootManager.obj
+ 0003:00000254       ??_C@_0CJ@GEAJ@TCursor?$DMItemType?$DO?3?3TCursor?5?9?5Fir@ 00212254     BootManager.obj
+ 0003:00000280       ??_C@_0CA@HLMD@TCursor?5created?5on?5NULL?5?9?5Halt?4?$AA@ 00212280     BootManager.obj
+ 0003:000002a0       ?m_iNT@CCPU@@0KA           002122a0     CPU.obj
+ 0003:00000968       ?waste_of_space@@3PAGA     00212968     DMAManager.obj
+ 0003:0000096c       ?pPagePortMap@@3PAGA       0021296c     DMAManager.obj
+ 0003:00000cb8       ??_C@_07IHEJ@push?$CI0x?$AA@ 00212cb8     FloppyDiskController.obj
+ 0003:00000cc0       ??_C@_01KMMP@?$CJ?$AA@     00212cc0     FloppyDiskController.obj
+ 0003:00000cc4       ??_C@_0L@BCOG@isEmpty?$CI?$CJ?$DN?$AA@ 00212cc4     FloppyDiskController.obj
+ 0003:00000d54       ?m_pPageAllocationMap@CPhysicalMemoryManager@@0PBKB 00212d54     PhysicalMemoryManager.obj
+ 0003:0000103c       ??_C@_04GMLE@?5?$DN?$DO?5?$AA@ 0021303c     PhysicalMemoryManager.obj
+ 0003:00001044       ??_C@_0BG@NKLB@setPageAllocationBit?$CI?$AA@ 00213044     PhysicalMemoryManager.obj
+ 0003:0000105c       ??_C@_02CEEM@?$CJ?5?$AA@   0021305c     PhysicalMemoryManager.obj
+ 0003:00001294       ?m_pRing0StackTop@CThread@@0PBXB 00213294     Thread.obj
+ 0003:00001298       ?m_pRing1StackTop@CThread@@0PBXB 00213298     Thread.obj
+ 0003:0000129c       ?m_pRing2StackTop@CThread@@0PBXB 0021329c     Thread.obj
+ 0003:000012a0       ?m_pRing3StackTop@CThread@@0PBXB 002132a0     Thread.obj
+ 0003:000014d0       ?Application@@3VCApplication@@A 002134d0     Application.obj
+ 0003:00001520       ?m_pCommands@CFloppyDiskController@@0QBVCCommand@1@B 00213520     FloppyDiskController.obj
+ 0003:0000153c       ?m_pSingletonInstance@CFloppyDiskController@@0PBV1@B 0021353c     FloppyDiskController.obj
+ 0003:00001540       ?m_pRegisteredISRs@CIDT@@0PAPAUSRegisteredISR@@A 00213540     IDT.obj
+ 0003:0000193c       ?m_pMainThread@CThreadManager@@0PAVCThread@@A 0021393c     ThreadManager.obj
+ 0003:00001940       ?m_pCurrentThread@CThreadManager@@0PAVCThread@@A 00213940     ThreadManager.obj
+ 0003:00001944       ?m_pThreadCursor@CThreadManager@@0PAV?$TCursor@PAVCThread@@@@A 00213944     ThreadManager.obj
+ 0003:00001948       ?m_bMultiTaskingEnabled@CThreadManager@@0_NA 00213948     ThreadManager.obj
+ 0003:0000194c       ?m_iTickCount@CTimer@@0KC  0021394c     Timer.obj
+ 0003:00001950       ?m_iX@@3HA                 00213950     libcpp:crt0.obj
+ 0003:00001954       ?m_iY@@3HA                 00213954     libcpp:crt0.obj
+ 0003:00001958       ?cout@@3Vostream_withassign@@A 00213958     libcpp:ostream_withassign.obj
+ 0003:00001970       ?Heap@@3VCHeap@@A          00213970     libcpp:malloc.obj
+
+ entry point at        0001:0000f020
+
+ Static symbols
+
+ 0001:000041a0       _$E79                      002051a0 f   FloppyDiskController.obj
+ 0001:000041aa       _$E78                      002051aa f   FloppyDiskController.obj
+ 0001:00000000       _$E83                      00201000 f   Application.obj
+ 0001:0000000f       _$E80                      0020100f f   Application.obj
+ 0001:0000001e       _$E82                      0020101e f   Application.obj
+ 0001:00000030       _$E81                      00201030 f   Application.obj
+ 0001:0000fb10       _$E4                       00210b10 f   libcpp:malloc.obj
+ 0001:0000fb30       _$E1                       00210b30 f   libcpp:malloc.obj
+ 0001:0000fb50       _$E3                       00210b50 f   libcpp:malloc.obj
+ 0001:0000fb70       _$E2                       00210b70 f   libcpp:malloc.obj
+ 0001:0000f780       LeadUp1                    00210780 f   libcpp:MEMCPY.OBJ
+ 0001:0000f7ac       LeadUp2                    002107ac f   libcpp:MEMCPY.OBJ
+ 0001:0000f7d0       LeadUp3                    002107d0 f   libcpp:MEMCPY.OBJ
+ 0001:0000f84f       UnwindUp0                  0021084f f   libcpp:MEMCPY.OBJ
+ 0001:0000f83c       UnwindUp1                  0021083c f   libcpp:MEMCPY.OBJ
+ 0001:0000f834       UnwindUp2                  00210834 f   libcpp:MEMCPY.OBJ
+ 0001:0000f82c       UnwindUp3                  0021082c f   libcpp:MEMCPY.OBJ
+ 0001:0000f824       UnwindUp4                  00210824 f   libcpp:MEMCPY.OBJ
+ 0001:0000f81c       UnwindUp5                  0021081c f   libcpp:MEMCPY.OBJ
+ 0001:0000f814       UnwindUp6                  00210814 f   libcpp:MEMCPY.OBJ
+ 0001:0000f80c       UnwindUp7                  0021080c f   libcpp:MEMCPY.OBJ
+ 0001:0000f868       TrailUp0                   00210868 f   libcpp:MEMCPY.OBJ
+ 0001:0000f870       TrailUp1                   00210870 f   libcpp:MEMCPY.OBJ
+ 0001:0000f87c       TrailUp2                   0021087c f   libcpp:MEMCPY.OBJ
+ 0001:0000f890       TrailUp3                   00210890 f   libcpp:MEMCPY.OBJ
+ 0001:0000f908       LeadDown1                  00210908 f   libcpp:MEMCPY.OBJ
+ 0001:0000f928       LeadDown2                  00210928 f   libcpp:MEMCPY.OBJ
+ 0001:0000f950       LeadDown3                  00210950 f   libcpp:MEMCPY.OBJ
+ 0001:0000f9a4       UnwindDown7                002109a4 f   libcpp:MEMCPY.OBJ
+ 0001:0000f9ac       UnwindDown6                002109ac f   libcpp:MEMCPY.OBJ
+ 0001:0000f9b4       UnwindDown5                002109b4 f   libcpp:MEMCPY.OBJ
+ 0001:0000f9bc       UnwindDown4                002109bc f   libcpp:MEMCPY.OBJ
+ 0001:0000f9c4       UnwindDown3                002109c4 f   libcpp:MEMCPY.OBJ
+ 0001:0000f9cc       UnwindDown2                002109cc f   libcpp:MEMCPY.OBJ
+ 0001:0000f9d4       UnwindDown1                002109d4 f   libcpp:MEMCPY.OBJ
+ 0001:0000f9e7       UnwindDown0                002109e7 f   libcpp:MEMCPY.OBJ
+ 0001:0000fa00       TrailDown0                 00210a00 f   libcpp:MEMCPY.OBJ
+ 0001:0000fa08       TrailDown1                 00210a08 f   libcpp:MEMCPY.OBJ
+ 0001:0000fa18       TrailDown2                 00210a18 f   libcpp:MEMCPY.OBJ
+ 0001:0000fa2c       TrailDown3                 00210a2c f   libcpp:MEMCPY.OBJ
+ 0001:0000f210       _$E4                       00210210 f   libcpp:ostream_withassign.obj
+ 0001:0000f230       _$E1                       00210230 f   libcpp:ostream_withassign.obj
+ 0001:0000f250       _$E3                       00210250 f   libcpp:ostream_withassign.obj
+ 0001:0000f270       _$E2                       00210270 f   libcpp:ostream_withassign.obj
+
+ 460 bytes saved through ICF
+

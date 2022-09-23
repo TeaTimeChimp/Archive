@@ -1,0 +1,98 @@
+.AUTODEPEND
+
+#               *Translator Definitions*
+CC = bcc +ICE16.CFG
+TASM = TASM
+TLIB = tlib
+TLINK = tlink
+LIBPATH = C:\BC45\LIB
+INCLUDEPATH = C:\BC45\INCLUDE
+
+
+#               *Implicit Rules*
+.c.obj:
+  $(CC) -c {$< }
+
+.cpp.obj:
+  $(CC) -c {$< }
+
+#               *List Macros*
+
+
+EXE_dependencies =  \
+ app.obj \
+ cpu.obj \
+ dt.obj \
+ gdt.obj \
+ main.obj \
+ cpu32.obj \
+ kernel.obj \
+ mapi.obj \
+ file.obj \
+ string.obj
+
+#               *Explicit Rules*
+ice16.exe: ice16.cfg $(EXE_dependencies)
+  $(TLINK) /f/k/m/3/v/c/L$(LIBPATH) @&&|
+c0t.obj+
+app.obj+
+cpu.obj+
+dt.obj+
+gdt.obj+
+main.obj+
+cpu32.obj+
+kernel.obj+
+mapi.obj+
+file.obj+
+string.obj
+ice16
+		# no map file
+cs.lib
+|
+
+
+#               *Individual File Dependencies*
+app.obj: ice16.cfg app.cpp 
+
+cpu.obj: ice16.cfg cpu.cpp 
+
+dt.obj: ice16.cfg dt.cpp 
+
+gdt.obj: ice16.cfg gdt.cpp 
+
+main.obj: ice16.cfg main.cpp 
+
+cpu32.obj: ice16.cfg cpu32.asm 
+        $(TASM) /M9 /T /MX /zn CPU32.ASM,CPU32.OBJ
+
+kernel.obj: ice16.cfg kernel.asm 
+        $(TASM) /M9 /T /MX /zn KERNEL.ASM,KERNEL.OBJ
+
+mapi.obj: ice16.cfg pe\mapi.asm 
+        $(TASM) /M9 /T /MX /zn PE\MAPI.ASM,MAPI.OBJ
+
+debug.obj: ice16.cfg debug.asm
+		$(TASM) /M9 /T /MX /zn DEBUG.ASM,DEBUG.OBJ
+
+file.obj: ice16.cfg ..\..\..\library\libcpp\file.cpp 
+	$(CC) -c ..\..\..\library\libcpp\file.cpp
+
+string.obj: ice16.cfg ..\..\..\library\libcpp\string.cpp 
+	$(CC) -c ..\..\..\library\libcpp\string.cpp
+
+#               *Compiler Configuration File*
+ice16.cfg: makefile.
+  copy &&|
+-mt
+-3
+-f-
+-v
+-vi-
+-wpro
+-weas
+-wpre
+-I$(INCLUDEPATH)
+-L$(LIBPATH)
+| ice16.cfg
+
+
